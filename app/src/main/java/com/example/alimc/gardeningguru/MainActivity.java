@@ -2,6 +2,7 @@ package com.example.alimc.gardeningguru;
 
 // Ali Cope can access and update project
 //Push to Git by Matthew
+// Bob had pizza for dinner
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
