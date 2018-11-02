@@ -24,8 +24,8 @@
         android:text="@string/enterZip"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/viewZone"
+        app:layout_constraintEnd_toStartOf="@+id/btnLookup"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +33,7 @@
         tools:text="Enter Zip Code" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLookup"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -45,13 +45,13 @@
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
         android:text="@string/set_zip_code"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/viewZone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textZip"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/viewZone"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
@@ -135,7 +135,7 @@
         app:layout_constraintBottom_toTopOf="@+id/viewToDo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/viewZone"
         app:layout_constraintVertical_chainStyle="packed" />
 
 </android.support.constraint.ConstraintLayout>
