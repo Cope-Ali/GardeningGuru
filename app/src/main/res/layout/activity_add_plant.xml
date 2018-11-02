@@ -20,7 +20,8 @@
         android:inputType="none|textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/sowDepth"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/sowDepth"
@@ -32,12 +33,13 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="sow depth"
+        android:hint="@string/sow_depth"
         android:inputType="number"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/seedSpacing"
@@ -49,11 +51,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="seed spacing"
+        android:hint="@string/seed_spacing"
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/rowSpacing"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/rowSpacing"
@@ -65,11 +68,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="row spacing"
+        android:hint="@string/row_spacing"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seedSpacing"
-        app:layout_constraintTop_toBottomOf="@+id/sowDepth" />
+        app:layout_constraintTop_toBottomOf="@+id/sowDepth"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/plantNotes"
@@ -81,12 +85,13 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="planting notes..."
+        android:hint="@string/planting_notes"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/germinationDays" />
+        app:layout_constraintTop_toBottomOf="@+id/germinationDays"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/germinationDays"
@@ -98,11 +103,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="germination days"
+        android:hint="@string/germination_days"
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/harvestDays"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seedSpacing" />
+        app:layout_constraintTop_toBottomOf="@+id/seedSpacing"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <EditText
         android:id="@+id/harvestDays"
@@ -114,11 +120,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="harvest days"
+        android:hint="@string/harvest_days"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/germinationDays"
-        app:layout_constraintTop_toBottomOf="@+id/rowSpacing" />
+        app:layout_constraintTop_toBottomOf="@+id/rowSpacing"
+        android:importantForAutofill="no" tools:targetApi="o"/>
 
     <View
         android:id="@+id/divider"

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Gardening Guru</string>
     <string name="plantName">plant name</string>
+    <string name="row_spacing">row spacing</string>
+    <string name="seed_spacing">seed spacing</string>
+    <string name="sow_depth">sow depth</string>
+    <string name="planting_notes">planting notes &amp;#8230</string>
+    <string name="germination_days">germination days</string>
+    <string name="harvest_days">harvest days</string>
 </resources>
