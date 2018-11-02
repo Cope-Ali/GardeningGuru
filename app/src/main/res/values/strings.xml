@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Gardening Guru</string>
+    <string name="plantName">plant name</string>
 </resources>
