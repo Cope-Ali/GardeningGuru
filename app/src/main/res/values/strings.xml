@@ -13,4 +13,5 @@
     <string name="add_plant">Add Plant</string>
     <string name="enter_zip_code">Enter Zip Code</string>
     <string name="enterZip">Enter Zip Code</string>
+    <string name="save_plant_information">Save Plant Information</string>
 </resources>
