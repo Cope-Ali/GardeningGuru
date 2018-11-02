@@ -7,4 +7,10 @@
     <string name="planting_notes">planting notes &amp;#8230</string>
     <string name="germination_days">germination days</string>
     <string name="harvest_days">harvest days</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="set_zip_code">Set Zip Code</string>
+    <string name="city_state_zip_code_hardiness_zone">City, State Zip Code Hardiness Zone</string>
+    <string name="add_plant">Add Plant</string>
+    <string name="enter_zip_code">Enter Zip Code</string>
+    <string name="enterZip">Enter Zip Code</string>
 </resources>
