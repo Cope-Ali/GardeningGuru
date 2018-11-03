@@ -15,4 +15,7 @@
     <string name="enterZip">Enter Zip Code</string>
     <string name="save_plant_information">Save Plant Information</string>
     <string name="plant_garden">Plant Garden</string>
+    <string name="save_plant">Save Plant</string>
+    <string name="reset_plant">Reset Plant</string>
+    <string name="dropdown_of_plants">Dropdown of plants</string>
 </resources>

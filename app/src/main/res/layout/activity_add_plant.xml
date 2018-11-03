@@ -17,11 +17,12 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/plantName"
+        android:importantForAutofill="no"
         android:inputType="none|textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/sowDepth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/sowDepth"
@@ -34,12 +35,13 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/sow_depth"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name"
         app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/seedSpacing"
@@ -52,11 +54,12 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/seed_spacing"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/rowSpacing"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/rowSpacing"
@@ -69,11 +72,12 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/row_spacing"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seedSpacing"
         app:layout_constraintTop_toBottomOf="@+id/sowDepth"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/plantNotes"
@@ -105,11 +109,12 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/germination_days"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/harvestDays"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seedSpacing"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/harvestDays"
@@ -122,11 +127,12 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:hint="@string/harvest_days"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/germinationDays"
         app:layout_constraintTop_toBottomOf="@+id/rowSpacing"
-        android:importantForAutofill="no" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <Button
         android:id="@+id/savePlant"
@@ -135,14 +141,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/save_plant_information"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/save_plant"
+        app:layout_constraintEnd_toStartOf="@+id/resetPlant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
 
     <ListView
         android:id="@+id/plantList"
@@ -153,10 +159,26 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/savePlant"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetPlant" />
+
+    <Button
+        android:id="@+id/resetPlant"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/reset_plant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/savePlant"
         app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
 
 </android.support.constraint.ConstraintLayout>
