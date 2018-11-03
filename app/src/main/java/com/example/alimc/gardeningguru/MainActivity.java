@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.textZip);
                 zipInput = editText.getText().toString();
-                Lookup l = new Lookup(zipInput, MainActivity.this, url, ZoneView);
+                LookupZip l = new LookupZip(zipInput, MainActivity.this, url, ZoneView);
                 l.execute();
             }
         });
