@@ -1,0 +1,47 @@
+MILESTONES
+
+Week 8
+
+	Create Zone Model View and Controllers
+	
+		This will prototype the model, view and controllers for the Zone, as well as the Main Activity, and the ModifyZone activity.
+
+		Once this is done, we will be able to use a similar solution for Plants, Plantings, and Tasks.
+
+Week 9 (Deliver week 8 and week 9)
+		
+	Create Plants Model, View, and Controllers 
+		
+		This should be similar to the zone, except that the user will input more, and there will be a HashMap to store the different plants. Also, the plants will be presented to the user in some sort of list view.
+		
+		We will need to learn to implement user interactions with the listview. This may involve a sub-activity to modify a specific plant.
+
+Week 10
+		
+	Create Plantings MVC
+	
+		This will be similar to the previous step, except that a Planting will contain a Plant. We'll need to work through that, and then store Plantings in a TreeMap, and the same sort of interactive listview we used with Plant.
+		
+		There should also be a way to view a Plant from a Planting. The Planting should probably hold a reference to a plant, or hold the plant's name so it can be looked up.
+		
+Week 11 (Deliver week 10 and 11)
+		
+	Create Tasks MVC
+		
+		This will be similar to Plantings, except that tasks will be held in two TreeMaps, one for pending tasks, and one for completed tasks. 
+		
+		Also, there will be logic to update tasks, and logic to generate tasks that are needed for plantings.
+		
+		There should also be a way to view a planting from a task.
+		
+Week 12
+		
+	Save and Load Data in a File
+	
+		The user's data will be saved to a file, when a change is made, and loaded from a file when the program is launched.
+		
+Week 13 (Delivery week 12 and 13)
+		
+	Set up alerts (Stretch)
+		
+		There should be alerts for tasks. Maybe the app will just alert the user to check the task list, or maybe the alerts will contain specific information, or maybe calendar entries will be sent to the calendar.
