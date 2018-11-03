@@ -45,3 +45,12 @@ Week 13 (Delivery week 12 and 13)
 	Set up alerts (Stretch)
 		
 		There should be alerts for tasks. Maybe the app will just alert the user to check the task list, or maybe the alerts will contain specific information, or maybe calendar entries will be sent to the calendar.
+		
+		
+Testing
+
+	Our sponsor will test each milestone as it is completed, and provide feedback. 
+	
+Quality Assurance
+
+	We will meet once a week to review the modules that have been deployed, and any changes that are needed. 
