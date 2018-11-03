@@ -51,14 +51,14 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/AddReminder"
+        app:layout_constraintBottom_toTopOf="@+id/EditReminder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewZone" />
 
     <Button
-        android:id="@+id/AddPlant"
+        android:id="@+id/EditPlant"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -68,17 +68,17 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/add_plant"
+        android:text="@string/edit_plants"
         app:layout_constraintBottom_toTopOf="@+id/plantGarden"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Add Plant" />
+        tools:text="Edit Plant" />
 
     <Button
-        android:id="@+id/AddReminder"
+        android:id="@+id/EditReminder"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="345dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -86,8 +86,8 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/add_reminder"
-        app:layout_constraintBottom_toTopOf="@+id/AddPlant"
+        android:text="@string/edit_reminders"
+        app:layout_constraintBottom_toTopOf="@+id/EditPlant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
