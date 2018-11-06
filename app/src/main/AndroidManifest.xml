@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddPlant" />
-        <activity android:name=".PlantGarden"></activity>
+        <activity android:name=".PlantGarden" />
+        <activity android:name=".ZoneLookup"></activity>
     </application>
 
 </manifest>
