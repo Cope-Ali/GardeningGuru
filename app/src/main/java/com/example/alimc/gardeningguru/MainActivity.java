@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //create textView function
         ZoneView = findViewById(R.id.viewZone);
 
-        btnLookup.setOnClickListener(new View.OnClickListener() {
+        /*btnLookup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.textZip);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 LookupZip l = new LookupZip(zipInput, MainActivity.this, url, ZoneView);
                 l.execute();
             }
-        });
+        });*/
 
     }
 }
