@@ -20,4 +20,5 @@
     <string name="dropdown_of_plants">Dropdown of plants</string>
     <string name="edit_plants">Edit Plants</string>
     <string name="edit_reminders">Edit Reminders</string>
+    <string name="submit_zip_code">Submit Zip Code</string>
 </resources>

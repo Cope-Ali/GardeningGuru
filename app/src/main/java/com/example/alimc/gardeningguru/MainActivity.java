@@ -22,19 +22,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // create button function
-        Button btnLookup = findViewById(R.id.btnLookup);
+        Button btnLookup = findViewById(R.id.submitZip);
         //create textView function
         ZoneView = findViewById(R.id.viewZone);
 
-        /*btnLookup.setOnClickListener(new View.OnClickListener() {
+        btnLookup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText editText = findViewById(R.id.textZip);
+                EditText editText = findViewById(R.id.zipInput);
                 zipInput = editText.getText().toString();
-                LookupZip l = new LookupZip(zipInput, MainActivity.this, url, ZoneView);
+                ZoneLookup l = new ZoneLookup(zipInput, MainActivity.this, url, ZoneView);
                 l.execute();
             }
-        });*/
+        });
 
     }
 }
