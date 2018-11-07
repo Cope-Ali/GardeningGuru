@@ -5,36 +5,25 @@ package com.example.alimc.gardeningguru;
 // Here is a conflict comment
 // Bob had pizza for dinner
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
-    TextView ZoneView;
-    String zipInput;
-    String url = "https://phzmapi.org/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // create button function
-        Button btnLookup = findViewById(R.id.submitZip);
-        //create textView function
-        ZoneView = findViewById(R.id.viewZone);
+    }
 
-        btnLookup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText editText = findViewById(R.id.zipInput);
-                zipInput = editText.getText().toString();
-                ZoneLookup l = new ZoneLookup(zipInput, MainActivity.this, url, ZoneView);
-                l.execute();
+    public void launchZoneLookup(View v) {
+                Intent intent = new Intent(this, ZoneLookup.class);
+                startActivity(intent);
             }
-        });
+
+
 
     }
-}

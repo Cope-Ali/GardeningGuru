@@ -1,5 +1,6 @@
 package com.example.alimc.gardeningguru;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -15,6 +16,7 @@ public class LookupZip extends AsyncTask<String, CharSequence, String> {
     private String _zip;
     private Context _currentContext;
     private String API_URL;
+    @SuppressLint("StaticFieldLeak")
     private TextView _viewZone;
 
     LookupZip(String zip, Context theContext, String url, TextView ZoneView){
