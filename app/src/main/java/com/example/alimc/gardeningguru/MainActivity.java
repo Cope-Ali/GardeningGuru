@@ -7,9 +7,9 @@ package com.example.alimc.gardeningguru;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+import android.view.View;
 import android.widget.Button;
-
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //create textView function
         ZoneView = findViewById(R.id.viewZone);
 
-        /*btnLookup.setOnClickListener(new View.OnClickListener() {
+        btnLookup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.textZip);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 LookupZip l = new LookupZip(zipInput, MainActivity.this, url, ZoneView);
                 l.execute();
             }
-        });*/
+        });
 
     }
 }
