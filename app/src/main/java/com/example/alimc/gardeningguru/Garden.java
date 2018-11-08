@@ -5,9 +5,9 @@ import java.util.Date;
 public class Garden {
 
     private String name;
-
-/* move these member variables out of the block comment as the objects are created
     private Zone zone;
+/* move these member variables out of the block comment as the objects are created
+
     private Map<String, Plant> plants;
     private Map<String, Plantings> plantings;
     private Map<Date, Task> tasksPending;
@@ -18,8 +18,6 @@ public class Garden {
 
 
 
-
-/* move these functions out of the block comment as the objects are created.
     public Zone getZone() {
         return zone;
     }
@@ -27,6 +25,8 @@ public class Garden {
     public void setZone(Zone zone) {
         this.zone = zone;
     }
+/* move these functions out of the block comment as the objects are created.
+
 
     public Map<String, Plant> getPlants() {
         return plants;
