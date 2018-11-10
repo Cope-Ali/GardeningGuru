@@ -6,8 +6,8 @@ public class Garden {
 
     private String name;
     private Zone zone;
+/* move these member variables out of the block comment as the objects are created
 
-    /* move these member variables out of the block comment as the objects are created
     private Map<String, Plant> plants;
     private Map<String, Plantings> plantings;
     private Map<Date, Task> tasksPending;
