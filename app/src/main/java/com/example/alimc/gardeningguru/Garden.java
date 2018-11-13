@@ -14,7 +14,10 @@ public class Garden {
     private Map<Date, Task> tasksComplete;
  */
 
-    public Garden(String name) {this.name = name; }
+    public Garden(String name) {
+        this.name = name;
+        zone = new Zone("");
+    }
 
 
 
