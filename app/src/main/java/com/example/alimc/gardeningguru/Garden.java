@@ -1,18 +1,16 @@
 package com.example.alimc.gardeningguru;
 
 import java.util.Date;
+import java.util.Map;
 
 public class Garden {
 
     private String name;
     private Zone zone;
-/* move these member variables out of the block comment as the objects are created
 
     private Map<String, Plant> plants;
-    private Map<String, Plantings> plantings;
+    private Map<String, Planting> plantings;
     private Map<Date, Task> tasksPending;
-    private Map<Date, Task> tasksComplete;
- */
 
     public Garden(String name) {
         this.name = name;
