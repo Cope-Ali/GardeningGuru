@@ -7,7 +7,6 @@ public class Garden {
 
     private String name;
     private Zone zone;
-
     private Map<String, Plant> plants;
     private Map<String, Planting> plantings;
     private Map<Date, Task> tasksPending;
@@ -17,10 +16,6 @@ public class Garden {
         zone = new Zone("");
     }
 
-
-
-
-
     public Zone getZone() {
         return zone;
     }
@@ -29,7 +24,6 @@ public class Garden {
         this.zone = zone;
     }
 
-/* move these functions out of the block comment as the objects are created.
     public Map<String, Plant> getPlants() {
         return plants;
     }
@@ -39,18 +33,18 @@ public class Garden {
     }
 
     public void addPlant(Plant plant) {
-     //todo
+        //todo
     }
 
     public void removePlant(String name) {
-     //todo
+        //todo
     }
 
-    public Map<String, Plantings> getPlantings() {
+    public Map<String, Planting> getPlantings() {
         return plantings;
     }
 
-    public void setPlantings(Map<String, Plantings> plantings) {
+    public void setPlantings(Map<String, Planting> plantings) {
         this.plantings = plantings;
     }
 
@@ -72,36 +66,5 @@ public class Garden {
     public void setTasksPending(Map<Date, Task> tasksPending) {
         this.tasksPending = tasksPending;
     }
-
-    //add a single task to tasksPending
-    public void addNewTask(Task task) {
-     //todo
-    }
-
-    //moves a task from tasksPending, to tasksComplete
-    public void completeTask(Task task) {
-        //todo
-    }
-
-
-    //looks through all of the plantings to see if any tasks need to be removed,updated,created
-    //looks through all of the the tasks to see if any need to be updated, for example, if a date has passed
-    public void computeTasks() {
-        //todo
-    }
-
-    public Map<Date, Task> getTasksComplete() {
-        return tasksComplete;
-    }
-
-    public void setTasksComplete(Map<Date, Task> tasksComplete) {
-        this.tasksComplete = tasksComplete;
-    }
-
- */
-
-
-
-
 
 }
