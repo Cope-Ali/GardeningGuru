@@ -55,6 +55,5 @@ public class MainActivity extends AppCompatActivity {
         String json = gson.toJson(garden); // myObject - instance of MyObject
         prefsEditor.putString("garden", json);
         prefsEditor.apply();
-
     }
 }
