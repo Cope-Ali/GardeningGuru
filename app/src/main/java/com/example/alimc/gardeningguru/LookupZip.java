@@ -10,20 +10,23 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.StringTokenizer;
 
 public class LookupZip extends AsyncTask<String, CharSequence, String> {
 
+    Zone _zone;
     private String _zip;
     private Context _currentContext;
     private String API_URL;
     @SuppressLint("StaticFieldLeak")
     private TextView _viewZone;
 
-    LookupZip(String zip, Context theContext, String url, TextView ZoneView){
+    LookupZip(String zip, Zone zone, Context theContext, String url, TextView ZoneView){
         _zip = zip;
         _currentContext = theContext;
         API_URL = url;
         _viewZone = ZoneView;
+        _zone = zone;
     }
     @Override
     protected void onPreExecute() {
@@ -59,6 +62,21 @@ public class LookupZip extends AsyncTask<String, CharSequence, String> {
     protected void onProgressUpdate(CharSequence... values) {
         _viewZone.setText(values[0]);
         super.onProgressUpdate(values);
+
+       // String zone_info_string = String.valueOf(values);
+        // split into parts
+        //StringTokenizer st = new StringTokenizer(zone_info_string);
+        //String zone = st.nextToken();
+        //String coord = st.nextToken();
+        //String lat = st.nextToken();
+        //String lon = st.nextToken();
+        //String temp = st.nextToken();
+        //assign to garden.zone variables
+        //StringTokenizer st2 = new StringTokenizer(zone, ":");
+        //_zone.setUSDAcode(st2.nextToken());
+        //StringTokenizer st3 = new StringTokenizer(temp, ":");
+        //_zone.setTempRange(st3.nextToken());
+
     }
 
 
