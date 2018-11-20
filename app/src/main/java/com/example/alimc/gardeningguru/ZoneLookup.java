@@ -11,6 +11,8 @@ import com.google.gson.Gson;
 
 import java.util.StringTokenizer;
 
+import static com.example.alimc.gardeningguru.MainActivity.garden;
+
 public class ZoneLookup extends AppCompatActivity {
    private TextView ZoneView;
     String zipInput;
@@ -18,11 +20,6 @@ public class ZoneLookup extends AppCompatActivity {
 
     //public ZoneLookup() {
    // }
-    //SharedPreferences mPrefs = this.getPreferences(MODE_PRIVATE);
-    //Gson gson = new Gson();
-    //String json = mPrefs.getString("garden", "");
-    //Garden garden = gson.fromJson(json, Garden.class);
-    Garden garden = new Garden("new");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

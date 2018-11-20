@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
-    Garden garden;
+    static Garden garden;
     SharedPreferences mPrefs;
     TextView displayZone;
 
