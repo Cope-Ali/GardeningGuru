@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.os.Parcelable;
 import com.google.gson.Gson;
 
 
@@ -60,4 +60,16 @@ public class MainActivity extends AppCompatActivity {
         prefsEditor.putString("garden", json);
         prefsEditor.apply();
     }
+
+    public void addPlantOnClick(View view){
+
+        Intent intent = new Intent(this, AddPlant.class);
+        Bundle plantBundle = new Bundle();
+        plantBundle.putParcelable("GARDEN", (Parcelable) garden);
+        intent.putExtra("GARDEN_OBJ",plantBundle);
+        intent.setClass(this,Garden.class);
+        startActivity(intent);
+
+    }
+
 }

@@ -1,5 +1,7 @@
 package com.example.alimc.gardeningguru;
 
+import java.util.Date;
+
 public class Plant {
 
     private String name;
@@ -7,6 +9,7 @@ public class Plant {
     private Float seedSpacing;
     private Float rowSpacing;
     private String plantNotes;
+    private Float harvestDay;
 
 
     public Plant(){
@@ -17,54 +20,62 @@ public class Plant {
         this.name = name;
     }
 
-
     public String getName() {
+
         return name;
     }
-
 
     public void setName(String name) {
         this.name = name;
     }
 
-
-
     public Float getSowDepth() {
+
         return sowDepth;
     }
 
     public void setSowDepth(Float sowDepth) {
+
         this.sowDepth = sowDepth;
     }
 
-
     public Float getSeedSpacing() {
+
         return seedSpacing;
     }
 
     public void setSeedSpacing(Float seedSpacing) {
+
         this.seedSpacing = seedSpacing;
     }
 
-
     public Float getRowSpacing() {
+
         return rowSpacing;
     }
 
     public void setRowSpacing(Float rowSpacing) {
+
         this.rowSpacing = rowSpacing;
     }
 
-
-
     public String getPlantNotes() {
+
         return plantNotes;
     }
 
     public void setPlantNotes(String plantNotes) {
+
         this.plantNotes = plantNotes;
     }
 
+    public Float getHarvestDay(){
+        return harvestDay;
+    }
+
+    public void setHarvestDay(Float harvestDay){
+        this.harvestDay = harvestDay;
+    }
 
 
 }
