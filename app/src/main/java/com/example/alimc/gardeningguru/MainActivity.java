@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -14,21 +15,25 @@ public class MainActivity extends AppCompatActivity {
 
     Garden garden;
     SharedPreferences mPrefs;
+    TextView displayZone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        displayZone = findViewById(R.id.viewZone);
         //initialize garden, or load garden if one already exists
         mPrefs = this.getPreferences(MODE_PRIVATE);
         if (!mPrefs.contains("garden")) {
             garden = new Garden("testGarden"); /* todo ask user to name garden */
-        }
-        else {
+        } else {
             Gson gson = new Gson();
             String json = mPrefs.getString("garden", "");
             garden = gson.fromJson(json, Garden.class);
+            if (garden.getZone() != null) {
+                String string_zone = garden.getZone().getUSDAcode();
+                displayZone.setText(string_zone);
+            }
         }
 
         /* show garden
@@ -36,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
         */
     }
-
     public void launchZoneLookup(View v) {
         Intent intent = new Intent(this, ZoneLookup.class);
         startActivity(intent);
@@ -46,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         //for testing
-        garden.setZone(new Zone("85041"));
+        //garden.setZone(new Zone("85041"));
         //
 
         mPrefs = this.getPreferences(MODE_PRIVATE);

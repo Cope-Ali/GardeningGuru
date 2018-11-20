@@ -26,7 +26,7 @@
         tools:text="@string/enter_zip_code" tools:targetApi="o"/>
 
     <TextView
-        android:id="@+id/zoneView"
+        android:id="@+id/zoneViewLookup"
         android:layout_width="217dp"
         android:layout_height="228dp"
         android:layout_marginStart="8dp"

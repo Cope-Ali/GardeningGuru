@@ -8,9 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
-
-import org.json.JSONObject;
 
 import java.util.StringTokenizer;
 
@@ -21,10 +18,11 @@ public class ZoneLookup extends AppCompatActivity {
 
     //public ZoneLookup() {
    // }
-  //  SharedPreferences mPrefs = this.getPreferences(MODE_PRIVATE);
+    //SharedPreferences mPrefs = this.getPreferences(MODE_PRIVATE);
     //Gson gson = new Gson();
     //String json = mPrefs.getString("garden", "");
     //Garden garden = gson.fromJson(json, Garden.class);
+    Garden garden = new Garden("new");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +40,28 @@ public class ZoneLookup extends AppCompatActivity {
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.zipInput);
                 zipInput = editText.getText().toString();
-                LookupZip l = new LookupZip(zipInput, ZoneLookup.this, url, ZoneView);
-              //  garden.getZone().setZip(zipInput);
+                Zone zone = garden.getZone();
+                LookupZip l = new LookupZip(zipInput, zone, ZoneLookup.this, url, ZoneView);
+                zone.setZip(zipInput);
                 l.execute();
+
             }
+
+
+            //get string
+           // String zone_info_string = (String) ZoneView.getText();
+            // split into parts
+            //StringTokenizer st = new StringTokenizer(zone_info_string, ",");
+            //String zone = st.nextToken();
+            //String coord = st.nextToken();
+            //String lat = st.nextToken();
+            //String lon = st.nextToken();
+            //String temp = st.nextToken();
+            //assign to garden.zone variables
+            // StringTokenizer st2 = new StringTokenizer(zone, ":");
+            //garden.getZone().setUSDAcode(st2.nextToken());
+            //StringTokenizer st3 = new StringTokenizer(temp, ":");
+            //garden.getZone().setTempRange(st3.nextToken());
         });
 
     }

@@ -33,7 +33,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="@string/city_state_zip_code_hardiness_zone"
+        android:text="@string/displayzone"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toStartOf="@+id/btnLookup"
         app:layout_constraintStart_toStartOf="parent"
