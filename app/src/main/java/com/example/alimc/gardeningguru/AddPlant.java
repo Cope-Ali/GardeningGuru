@@ -1,14 +1,14 @@
 package com.example.alimc.gardeningguru;
 
-import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import static com.example.alimc.gardeningguru.MainActivity.garden;
+
 public class AddPlant extends AppCompatActivity {
 
-    Garden garden;
     Plant newPlant;
     EditText plantName;
     EditText sowDepth;
@@ -30,10 +30,6 @@ public class AddPlant extends AppCompatActivity {
         harvestDay = (EditText) findViewById(R.id.harvestDays);
         plantNotes = (EditText) findViewById(R.id.plantNotes);
 
-        Bundle b = this.getIntent().getExtras();
-        if(b != null){
-            garden = b.getParcelable("GARDEN");
-        }
     }
 
 
@@ -45,6 +41,9 @@ public class AddPlant extends AppCompatActivity {
         newPlant.setSeedSpacing(Float.parseFloat(seedSpacing.getText().toString()));
         newPlant.setPlantNotes(plantNotes.getText().toString());
         newPlant.setHarvestDay(Float.parseFloat(harvestDay.getText().toString()));
+
+        garden.addPlant(newPlant);
+
     }
 
     public void onClickPlantResetBtn(View v){
