@@ -53,7 +53,7 @@ public class Planting {
             tasksComplete.put(taskName, tasksPending.get(taskName));
             tasksPending.remove(taskName);
         } else {
-            Log.d("Debug", "completeTask: " + taskName + "was not in tasksPending.");
+            Log.d("Planting", "completeTask: " + taskName + "was not in tasksPending.");
         }
 
     }
