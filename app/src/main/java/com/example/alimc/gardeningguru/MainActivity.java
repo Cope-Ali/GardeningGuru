@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String GARDEN_NAME = "mainGarden";
     static Garden garden;
     SharedPreferences mPrefs;
     TextView displayZone;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //initialize garden, or load garden if one already exists
         mPrefs = this.getPreferences(MODE_PRIVATE);
         if (!mPrefs.contains("garden")) {
-            garden = new Garden("testGarden"); /* todo ask user to name garden */
+            garden = new Garden(GARDEN_NAME);
         } else {
             Gson gson = new Gson();
             String json = mPrefs.getString("garden", "");
@@ -64,10 +65,12 @@ public class MainActivity extends AppCompatActivity {
     public void addPlantOnClick(View view){
 
         Intent intent = new Intent(this, AddPlant.class);
+        /*
         Bundle plantBundle = new Bundle();
         plantBundle.putParcelable("GARDEN", (Parcelable) garden);
         intent.putExtra("GARDEN_OBJ",plantBundle);
         intent.setClass(this,Garden.class);
+        */
         startActivity(intent);
 
     }

@@ -8,6 +8,7 @@ public class Task {
     private Date dueDate;
     private boolean done;
     private String description;
+    private int rescheduled;
 
     public Task(String name) {
         this.name = name;
@@ -51,5 +52,13 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getRescheduled() {
+        return rescheduled;
+    }
+
+    public void setRescheduled(int rescheduled) {
+        this.rescheduled = rescheduled;
     }
 }

@@ -69,6 +69,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
+        android:onClick="addPlantOnClick"
         android:text="@string/edit_plants"
         app:layout_constraintBottom_toTopOf="@+id/plantGarden"
         app:layout_constraintEnd_toEndOf="parent"

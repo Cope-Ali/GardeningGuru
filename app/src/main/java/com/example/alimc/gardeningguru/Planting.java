@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Planting {
-    private String name;
+    private String name; //procedurally generated (Plant name + Date)
     private Plant plant;
     private Date plantWhen;
     private boolean planted;
@@ -18,9 +18,9 @@ public class Planting {
     private int daysTillThin;
     private String notes;
     private String location;
-    private Map<String, Task> tasksPending;
-    private Map<String, Task> tasksComplete;
-    public static final int DEFAULT_WEEDING_INTERVAL = 3; //todo look up weeding schedule by USDA zone
+    private Map<String, Task> tasksPending; //todo rename to tasks, remove tasksComplete
+    //todo add getters for pending tasks, and complete tasks
+    public static final int DEFAULT_WEEDING_INTERVAL = 3; //STRETCH todo look up weeding schedule by USDA zone
 
 
     public Planting(String name, Plant plant) {
@@ -30,7 +30,6 @@ public class Planting {
         planted = false;
         weedingInterval = DEFAULT_WEEDING_INTERVAL;
         tasksPending = new HashMap<>();
-        tasksComplete = new HashMap<>();
         //todo do any other member variables need to be set here?
     }
 
@@ -41,6 +40,13 @@ public class Planting {
 
     public void computeTasks() {
         //todo this should check if any tasks need to be added to tasksPending
+
+        //fill tasks pending
+        //task name = plant + task (eg weed)
+
+        //clean up tasks
+            //update due date until tomorrow, increment counter
+
     }
 
     public void addNewTask(String taskName, Task task) {
@@ -50,7 +56,7 @@ public class Planting {
     public void completeTask(String taskName) {
         if (tasksPending.containsKey(taskName)) {
             tasksPending.get(taskName).setDone(true);
-            tasksComplete.put(taskName, tasksPending.get(taskName));
+            //tasksComplete.put(taskName, tasksPending.get(taskName));
             tasksPending.remove(taskName);
         } else {
             Log.d("Planting", "completeTask: " + taskName + "was not in tasksPending.");
@@ -146,13 +152,13 @@ public class Planting {
         this.tasksPending = tasksPending;
     }
 
-    public Map<String, Task> getTasksComplete() {
+    /*public Map<String, Task> getTasksComplete() {
         return tasksComplete;
-    }
+    }*/
 
-    public void setTasksComplete(Map<String, Task> tasksComplete) {
+    /*public void setTasksComplete(Map<String, Task> tasksComplete) {
         this.tasksComplete = tasksComplete;
-    }
+    }*/
 
     public int getDaysTillThin() {
         return daysTillThin;
