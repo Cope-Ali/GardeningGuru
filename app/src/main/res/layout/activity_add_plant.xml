@@ -146,7 +146,7 @@
         android:layout_marginRight="16dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="onClickPlantSaveBtn"
-        android:text="Save"
+        android:text="@string/save_plant"
         app:layout_constraintEnd_toStartOf="@+id/resetPlant"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
@@ -178,7 +178,7 @@
         android:layout_marginRight="16dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="onClickPlantResetBtn"
-        android:text="Reset"
+        android:text="@string/reset_plant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/savePlant"
         app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
