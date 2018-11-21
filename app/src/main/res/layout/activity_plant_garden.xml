@@ -31,22 +31,26 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="Planting Date"
+        android:hint="@string/planting_date"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantDropdown" />
 
     <ListView
+        android:id="@+id/plantingList"
         android:layout_width="355dp"
         android:layout_height="209dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="286dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button"
@@ -54,13 +58,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="33dp"
-        android:text="Save"
-        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+        android:layout_marginBottom="16dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toTopOf="@+id/plantingList"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantingNotes" />
 
     <Button
         android:id="@+id/button3"
@@ -68,13 +74,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="59dp"
         android:layout_marginLeft="59dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="33dp"
-        android:text="Reset Changes"
-        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+        android:layout_marginBottom="16dp"
+        android:text="@string/reset_changes"
+        app:layout_constraintBottom_toTopOf="@+id/plantingList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/plantingNotes" />
 
     <EditText
         android:id="@+id/plantingNotes"
@@ -82,10 +90,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Notes"
+        android:text="@string/notes"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="132dp" />
+        app:layout_constraintTop_toBottomOf="@+id/plantingDate" />
 
 </android.support.constraint.ConstraintLayout>
