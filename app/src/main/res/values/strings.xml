@@ -23,4 +23,8 @@
     <string name="submit_zip_code">Submit Zip Code</string>
     <string name="displayzone">displayZone</string>
     <string name="save_zone_info">Save Zone Info</string>
+    <string name="save_task">Save Task</string>
+    <string name="reset_task">Reset Task</string>
+    <string name="taskname">taskName</string>
+    <string name="notes">Notes</string>
 </resources>

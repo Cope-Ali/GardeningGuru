@@ -39,31 +39,53 @@
 
     <ListView
         android:layout_width="355dp"
-        android:layout_height="284dp"
+        android:layout_height="209dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="211dp" />
+        tools:layout_editor_absoluteY="286dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="33dp"
         android:text="Save"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="135dp" />
+        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="33dp"
         android:text="Reset Changes"
-        tools:layout_editor_absoluteX="265dp"
-        tools:layout_editor_absoluteY="135dp" />
+        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button" />
+
+    <EditText
+        android:id="@+id/plantingNotes"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Notes"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="132dp" />
 
 </android.support.constraint.ConstraintLayout>
