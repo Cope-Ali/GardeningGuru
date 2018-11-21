@@ -22,4 +22,5 @@
     <string name="edit_reminders">Edit Reminders</string>
     <string name="submit_zip_code">Submit Zip Code</string>
     <string name="displayzone">displayZone</string>
+    <string name="save_zone_info">Save Zone Info</string>
 </resources>
