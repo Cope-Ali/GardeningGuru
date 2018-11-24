@@ -75,4 +75,6 @@ public class Task {
     public void setRescheduled(int rescheduled) {
         this.rescheduled = rescheduled;
     }
+
+    public void incrementRescheduled() {this.rescheduled++; }
 }
