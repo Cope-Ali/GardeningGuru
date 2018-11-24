@@ -45,7 +45,7 @@ public class Planting {
 
         //Plant task...
         //Skip if already planted, or task already exists.
-        String plantTaskName = plant.getName() + "_plant";
+        String plantTaskName = name + "_plant";
         if (!planted && !tasks.containsKey(plantTaskName)) {
             Task plantTask = new Task(plantTaskName, plant.getName(), plantWhen
                     , false, "", 0);
@@ -53,7 +53,7 @@ public class Planting {
         }
 
         //Weeding task...
-        String weedingTaskName = plant.getName() + "_weeding";
+        String weedingTaskName = name + "_weeding";
         //Create weeding task if needed. If it already exists, then update it.
         if (!tasks.containsKey(weedingTaskName)) {
             Task weedingTask = new Task(weedingTaskName, plant.getName(), computeWeedingDate()
@@ -66,10 +66,13 @@ public class Planting {
             }
         }
 
+        //Harvest task...
+        String harvest = name + "_harvest";
         //set task for harvest, if it doesn't exist
-        
+
 
         //set task for thinning
+        String thinTaskName = name + "_thin";
 
         //task name = plant + task (eg weed)
 
