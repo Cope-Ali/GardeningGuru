@@ -37,15 +37,16 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        /* show garden
+         //show garden
         Toast toast=Toast.makeText(getApplicationContext(),mPrefs.getString("garden", ""),Toast.LENGTH_SHORT);
         toast.show();
-        */
+
     }
     public void launchZoneLookup(View v) {
         Intent intent = new Intent(this, ZoneLookup.class);
         startActivity(intent);
     }
+//TODO get zone to update from garden.zone.getUSDAcode after it is reset
 
     @Override
     protected void onPause() {
