@@ -43,7 +43,8 @@ public class Planting {
     public void computeTasks() {
         //todo this should check if any tasks need to be added to tasksPending
 
-        //set plant task, if not planted, and if there is no task
+        //Plant task...
+        //Skip if already planted, or task already exists.
         String plantTaskName = plant.getName() + "_plant";
         if (!planted && !tasks.containsKey(plantTaskName)) {
             Task plantTask = new Task(plantTaskName, plant.getName(), plantWhen
@@ -53,10 +54,12 @@ public class Planting {
 
         //Weeding task...
         String weedingTaskName = plant.getName() + "_weeding";
-        if (!tasks.containsKey(weedingTaskName)) { //Create weeding task if needed.
+        //Create weeding task if needed. If it already exists, then update it.
+        if (!tasks.containsKey(weedingTaskName)) {
             Task weedingTask = new Task(weedingTaskName, plant.getName(), computeWeedingDate()
                     , false, "", 0);
-        } else { //Update weeding task if needed.
+
+        } else {
             if (!tasks.get(weedingTaskName).getDueDate().after(new Date())) {
                 tasks.get(weedingTaskName).setDueDate(computeWeedingDate());
                 tasks.get(weedingTaskName).setDone(false);
@@ -64,6 +67,7 @@ public class Planting {
         }
 
         //set task for harvest, if it doesn't exist
+        
 
         //set task for thinning
 
