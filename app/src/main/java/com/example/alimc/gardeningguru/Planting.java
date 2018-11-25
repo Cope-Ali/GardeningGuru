@@ -12,15 +12,15 @@ public class Planting {
     private Plant plant;
     private Date plantWhen;
     private boolean planted;
+    private boolean harvested;
     private int weedingInterval;
     private int daysTillHarvest;
     private int germinationDays;
     private int daysTillThin;
     private String notes;
     private String location;
-    private Map<String, Task> tasksPending; //todo rename to tasks, remove tasksComplete
-    //todo add getters for pending tasks, and complete tasks
-    public static final int DEFAULT_WEEDING_INTERVAL = 3; //STRETCH todo look up weeding schedule by USDA zone
+    private Map<String, Task> tasks;
+    public static final int DEFAULT_WEEDING_INTERVAL = 3; //STRETCH todo look up weeding schedule by USDA zone and/or maybe seasonally
 
 
     public Planting(String name, Plant plant) {
@@ -29,35 +29,100 @@ public class Planting {
         plantWhen = new Date();
         planted = false;
         weedingInterval = DEFAULT_WEEDING_INTERVAL;
-        tasksPending = new HashMap<>();
-        //todo do any other member variables need to be set here?
+        tasks = new HashMap<>();
     }
 
     public Date computeWeedingDate() {
-        //todo this should compute the next weeding date
-        return new Date();
+        Date currentDate = new Date(); //default constructor sets date to now
+        Date weedingDate = plantWhen;
+        while (currentDate.after(weedingDate)) {
+            weedingDate = addDaysToDate(weedingDate, weedingInterval);
+        }
+        return weedingDate;
     }
 
+    /**
+     *  computeTasks
+     *  Puts any needed tasks into "tasks", and makes any needed updates.
+     */
     public void computeTasks() {
-        //todo this should check if any tasks need to be added to tasksPending
 
-        //fill tasks pending
-        //task name = plant + task (eg weed)
+        //Plant task...
+        //Skip if already planted, or task already exists.
+        String plantTaskName = name + "_plant";
+        if (!planted && !tasks.containsKey(plantTaskName)) {
+            Task plantTask = new Task(plantTaskName, plant.getName(), plantWhen
+                    , false, "", 0);
+            tasks.put(plantTaskName, plantTask);
+        } else {
+            if (isHarvested()) {
+                tasks.get(plantTaskName).isDone();
+            } else if (!tasks.get(plantTaskName).isDone()
+             && tasks.get(plantTaskName).getDueDate().before(new Date())) {
+                tasks.get(plantTaskName).setDueDate(new Date());
+                tasks.get(plantTaskName).incrementRescheduled();
+            }
+        }
 
-        //clean up tasks
-            //update due date until tomorrow, increment counter
+        //Weeding task...
+        String weedingTaskName = name + "_weeding";
+        //Create weeding task if needed. If it already exists, then update it.
+        if (!tasks.containsKey(weedingTaskName)) {
+            Task weedingTask = new Task(weedingTaskName, plant.getName(), computeWeedingDate()
+                    , false, "", 0);
+            tasks.put(plantTaskName, weedingTask);
+        } else {
+            if (isHarvested()) {
+                tasks.get(weedingTaskName).isDone();
+            } else if (tasks.get(weedingTaskName).getDueDate().before(new Date())) {
+                tasks.get(weedingTaskName).setDueDate(computeWeedingDate());
+                tasks.get(weedingTaskName).setDone(false);
+                tasks.get(weedingTaskName).incrementRescheduled();
+            }
+        }
 
+        //Harvest task...
+        String harvestTaskName = name + "_harvest";
+        if (!tasks.containsKey(harvestTaskName)) {
+            Task harvestTask = new Task(harvestTaskName, plant.getName(), computeHarvestDate()
+                    , false, "", 0);
+            tasks.put(harvestTaskName, harvestTask);
+        } else {
+            if (isHarvested()) {
+                tasks.get(harvestTaskName).isDone();
+            } else if (tasks.get(harvestTaskName).isDone()) {
+                setHarvested(true);
+            } else if (tasks.get(harvestTaskName).getDueDate().before(new Date())) {
+                tasks.get(harvestTaskName).setDueDate(new Date());
+                tasks.get(harvestTaskName).incrementRescheduled();
+            }
+        }
+
+        //Thinning task...
+        String thinTaskName = name + "_thin";
+        if (!tasks.containsKey(thinTaskName)) {
+            Task thinTask = new Task(thinTaskName, plant.getName(), computeThinDate()
+                    , false, "", 0);
+            tasks.put(plantTaskName, thinTask);
+        } else {
+            if (isHarvested()) {
+                tasks.get(thinTaskName).isDone();
+            } else if (!tasks.get(thinTaskName).isDone()
+                    && tasks.get(thinTaskName).getDueDate().before(new Date())) {
+                tasks.get(thinTaskName).setDueDate(new Date());
+                tasks.get(thinTaskName).incrementRescheduled();
+            }
+        }
     }
 
     public void addNewTask(String taskName, Task task) {
-        tasksPending.put(taskName, task);
+        tasks.put(taskName, task);
     }
 
     public void completeTask(String taskName) {
-        if (tasksPending.containsKey(taskName)) {
-            tasksPending.get(taskName).setDone(true);
-            //tasksComplete.put(taskName, tasksPending.get(taskName));
-            tasksPending.remove(taskName);
+        if (tasks.containsKey(taskName)) {
+            tasks.get(taskName).setDone(true);
+            tasks.remove(taskName);
         } else {
             Log.d("Planting", "completeTask: " + taskName + "was not in tasksPending.");
         }
@@ -70,6 +135,10 @@ public class Planting {
 
     public Date computeGerminationDate() {
         return addDaysToDate(plantWhen, germinationDays);
+    }
+
+    public Date computeThinDate() {
+        return addDaysToDate(plantWhen, daysTillThin);
     }
 
     public String getName() {
@@ -145,20 +214,12 @@ public class Planting {
     }
 
     public Map<String, Task> getTasksPending() {
-        return tasksPending;
+        return tasks;
     }
 
     public void setTasksPending(Map<String, Task> tasksPending) {
-        this.tasksPending = tasksPending;
+        this.tasks = tasksPending;
     }
-
-    /*public Map<String, Task> getTasksComplete() {
-        return tasksComplete;
-    }*/
-
-    /*public void setTasksComplete(Map<String, Task> tasksComplete) {
-        this.tasksComplete = tasksComplete;
-    }*/
 
     public int getDaysTillThin() {
         return daysTillThin;
@@ -176,5 +237,13 @@ public class Planting {
         c.add(Calendar.DATE, days);
         datePlusDays = c.getTime();
         return datePlusDays;
+    }
+
+    public boolean isHarvested() {
+        return harvested;
+    }
+
+    public void setHarvested(boolean harvested) {
+        this.harvested = harvested;
     }
 }

@@ -15,7 +15,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.StringTokenizer;
+
 
 public class LookupZip extends AsyncTask<String, CharSequence, String> {
 
@@ -73,19 +73,6 @@ public class LookupZip extends AsyncTask<String, CharSequence, String> {
         _viewZone.setText(values[0]);
         super.onProgressUpdate(values);
 
-       // String zone_info_string = String.valueOf(values);
-        // split into parts
-        //StringTokenizer st = new StringTokenizer(zone_info_string);
-        //String zone = st.nextToken();
-        //String coord = st.nextToken();
-        //String lat = st.nextToken();
-        //String lon = st.nextToken();
-        //String temp = st.nextToken();
-        //assign to garden.zone variables
-        //StringTokenizer st2 = new StringTokenizer(zone, ":");
-        //_zone.setUSDAcode(st2.nextToken());
-        //StringTokenizer st3 = new StringTokenizer(temp, ":");
-        //_zone.setTempRange(st3.nextToken());
 
     }
 

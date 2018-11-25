@@ -10,6 +10,20 @@ public class Task {
     private String description;
     private int rescheduled;
 
+    public Task(String name
+            , String plantingName
+            , Date dueDate
+            , boolean done
+            , String description
+            , int rescheduled) {
+        this.name = name;
+        this.plantingName = plantingName;
+        this.dueDate = dueDate;
+        this.done = done;
+        this.description = description;
+        this.rescheduled = rescheduled;
+    }
+
     public Task(String name) {
         this.name = name;
     }
@@ -61,4 +75,6 @@ public class Task {
     public void setRescheduled(int rescheduled) {
         this.rescheduled = rescheduled;
     }
+
+    public void incrementRescheduled() {this.rescheduled++; }
 }

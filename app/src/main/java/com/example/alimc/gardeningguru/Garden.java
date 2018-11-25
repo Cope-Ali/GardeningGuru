@@ -33,11 +33,11 @@ public class Garden {
     }
 
     public void addPlant(Plant plant) {
-        //todo
+        plants.put(plant.getName(), plant);
     }
 
     public void removePlant(String name) {
-        //todo
+        plants.remove(name);
     }
 
     public Map<String, Planting> getPlantings() {
@@ -50,13 +50,12 @@ public class Garden {
 
     //adds one planting from plantings
     public void addPlanting(Planting planting) {
-        //todo
+        plantings.put(planting.getName(), planting);
     }
 
     //removes one planting from plantings, by searching for the planting name that is passed in
     public void removePlanting(String name) {
-        //todo
-        //it would probably be better to just pass in a reference to the object...
+        plantings.remove(name);
     }
 
     public Map<Date, Task> getTasksPending() {
