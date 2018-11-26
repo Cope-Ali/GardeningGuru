@@ -146,7 +146,7 @@
         android:layout_marginRight="16dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="onClickPlantSaveBtn"
-        android:text="@string/save_plant"
+        android:text="@string/add_plant"
         app:layout_constraintEnd_toStartOf="@+id/resetPlant"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
@@ -182,5 +182,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/savePlant"
         app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
+
+    <TextView
+        android:id="@+id/plantArrayListPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="gone"/>
 
 </android.support.constraint.ConstraintLayout>

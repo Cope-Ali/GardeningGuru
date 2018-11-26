@@ -26,9 +26,10 @@
     <string name="save_task">Save Task</string>
     <string name="reset_task">Reset Task</string>
     <string name="taskname">taskName</string>
-    <string name="notes">Notes</string>
     <string name="planting_date">Planting Date</string>
     <string name="save">Save</string>
     <string name="reset_changes">Reset Changes</string>
     <string name="notes">Notes</string>
+    <string name="delete_plant">Delete</string>
+    <string name="update_plant">Update</string>
 </resources>

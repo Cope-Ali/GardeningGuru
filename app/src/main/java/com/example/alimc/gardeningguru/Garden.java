@@ -1,6 +1,7 @@
 package com.example.alimc.gardeningguru;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Garden {
@@ -13,7 +14,8 @@ public class Garden {
 
     public Garden(String name) {
         this.name = name;
-        zone = new Zone("");
+        this.zone = new Zone("");
+        this.plants = new HashMap<>();
     }
 
     public Zone getZone() {
@@ -25,19 +27,33 @@ public class Garden {
     }
 
     public Map<String, Plant> getPlants() {
-        return plants;
+
+        return this.plants;
+    }
+
+    public Plant getPlant(String key){
+
+       return this.plants.get(key);
     }
 
     public void setPlants(Map<String, Plant> plants) {
+
         this.plants = plants;
     }
 
     public void addPlant(Plant plant) {
-        plants.put(plant.getName(), plant);
+        //This was added to test addPlant activity
+        if(this.plants == null)
+        {
+            this.plants = new HashMap<>();
+        }
+
+        this.plants.put(plant.getName(), plant);
     }
 
     public void removePlant(String name) {
-        plants.remove(name);
+
+        this.plants.remove(name);
     }
 
     public Map<String, Planting> getPlantings() {

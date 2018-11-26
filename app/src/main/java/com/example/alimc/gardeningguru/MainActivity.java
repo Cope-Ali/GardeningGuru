@@ -66,14 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public void addPlantOnClick(View view){
 
         Intent intent = new Intent(this, AddPlant.class);
-        /*
-        Bundle plantBundle = new Bundle();
-        plantBundle.putParcelable("GARDEN", (Parcelable) garden);
-        intent.putExtra("GARDEN_OBJ",plantBundle);
-        intent.setClass(this,Garden.class);
-        */
         startActivity(intent);
-
     }
 
 }
