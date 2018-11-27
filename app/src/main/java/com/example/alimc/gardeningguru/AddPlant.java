@@ -33,6 +33,7 @@ public class AddPlant extends AppCompatActivity {
     private Button saveEditBtn;
     private Button resetDeleteBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,7 @@ public class AddPlant extends AppCompatActivity {
         this.setListView();
 
     }
+
 
     public void setListView(){
 
@@ -94,15 +96,16 @@ public class AddPlant extends AppCompatActivity {
         else if(buttonText.equals(getResources().getString(R.string.update_plant))){
             this.inputToPlant(this.adapter.getItem(Integer.parseInt(this.plantArrayLocation.getText().toString())));
             this.clearInputFields();
+            this.adapter.notifyDataSetChanged();
             this.setButtonText("add");
         }
-
     }
 
 
     public void inputToPlant(Plant plant){
         plant.setName(this.plantName.getText().toString());
-        plant.setSowDepth(Float.parseFloat(this.sowDepth.getText().toString()));
+        plant.setSowDepth(Float.parseFloat(this.sowDepth.getText().toString() != "" ?
+                                           this.sowDepth.getText().toString():"0" ));
         plant.setRowSpacing(Float.parseFloat(this.rowSpacing.getText().toString()));
         plant.setSeedSpacing(Float.parseFloat(this.seedSpacing.getText().toString()));
         plant.setPlantNotes(this.plantNotes.getText().toString());
@@ -121,11 +124,13 @@ public class AddPlant extends AppCompatActivity {
         this.germinationDay.setText(plant.getGerminationDay().toString());
     }
 
+
     public void onPlantItemClick(int position){
         this.plantToInput(this.adapter.getItem(position));
         this.plantArrayLocation.setText(Integer.toString(position));
         this.setButtonText("edit");
     }
+
 
     public void onClickPlantResetBtn(View v){
 
@@ -145,6 +150,7 @@ public class AddPlant extends AppCompatActivity {
 
     }
 
+
     public void clearInputFields(){
         this.plantName.setText("");
         this.sowDepth.setText("");
@@ -155,6 +161,7 @@ public class AddPlant extends AppCompatActivity {
         this.plantArrayLocation.setText("");
         this.germinationDay.setText("");
     }
+
 
     public void setButtonText(String action){
 

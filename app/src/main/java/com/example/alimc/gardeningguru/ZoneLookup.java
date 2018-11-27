@@ -56,21 +56,25 @@ public class ZoneLookup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Zone zone = garden.getZone();
+                //Zone zone = garden.getZone();
+                //zone = new Zone();
                 EditText editTextZip = findViewById(R.id.zipInput);
-                zipInput = editTextZip.getText().toString();
-                zone.setZip(zipInput);
+                //editTextZip = editTextZip.getText().toString();
+                Zone zone = new Zone(editTextZip.getText().toString());
+               // zone.setZip(zipInput);
                 String stringZone = ZoneView.getText().toString();
                 try {
                     JSONObject jObj = new JSONObject(stringZone);
                     String _code = jObj.getString("zone");
-                    garden.getZone().setUSDAcode(_code);
+                    zone.setUSDAcode(_code);
                     String _temp = jObj.getString("temperature_range");
-                    garden.getZone().setTempRange(_temp);
+                    zone.setTempRange(_temp);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+                garden.setZone(zone);
 
                 //show garden
                 Toast toast=Toast.makeText(getApplicationContext(),garden.getZone().getUSDAcode(),Toast.LENGTH_SHORT);
