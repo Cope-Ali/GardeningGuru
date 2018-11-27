@@ -37,14 +37,20 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-         //show garden
+         //show garden myPrefs
         Toast toast=Toast.makeText(getApplicationContext(),mPrefs.getString("garden", ""),Toast.LENGTH_SHORT);
         toast.show();
+
+        String string_zone = garden.getZone().getUSDAcode();
+        displayZone.setText(string_zone);
 
     }
     public void launchZoneLookup(View v) {
         Intent intent = new Intent(this, ZoneLookup.class);
         startActivity(intent);
+        //show garden
+        Toast toast=Toast.makeText(getApplicationContext(),garden.getZone().getUSDAcode(),Toast.LENGTH_SHORT);
+        toast.show();
     }
 //TODO get zone to update from garden.zone.getUSDAcode after it is reset
 
@@ -61,6 +67,16 @@ public class MainActivity extends AppCompatActivity {
         String json = gson.toJson(garden); // myObject - instance of MyObject
         prefsEditor.putString("garden", json);
         prefsEditor.apply();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //show garden
+        Toast toast=Toast.makeText(getApplicationContext(),garden.getZone().getUSDAcode(),Toast.LENGTH_SHORT);
+        toast.show();
+        String string_zone = garden.getZone().getUSDAcode();
+        displayZone.setText(string_zone);
     }
 
     public void addPlantOnClick(View view){
