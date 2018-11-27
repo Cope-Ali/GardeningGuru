@@ -27,15 +27,16 @@ public class MainActivity extends AppCompatActivity {
         mPrefs = this.getPreferences(MODE_PRIVATE);
         if (!mPrefs.contains("garden")) {
             garden = new Garden(GARDEN_NAME);
-        } else if (garden == null){
+        } else if (garden == null) {
             Gson gson = new Gson();
             String json = mPrefs.getString("garden", "");
             garden = gson.fromJson(json, Garden.class);
-            if (garden.getZone() != null) {
+        }
+         if (garden.getZone() != null) {
                 String string_zone = garden.getZone().getUSDAcode();
                 displayZone.setText(string_zone);
             }
-        }
+
 
          //show garden
         Toast toast=Toast.makeText(getApplicationContext(),garden.getZone().getZip(),Toast.LENGTH_SHORT);
