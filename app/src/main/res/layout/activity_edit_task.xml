@@ -74,11 +74,13 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
+        android:hint="@string/notes_on_task"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:text="@string/notes"
         app:layout_constraintBottom_toTopOf="@+id/Reset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskName"
-        android:importantForAutofill="no" />
+        tools:targetApi="o" />
 </android.support.constraint.ConstraintLayout>
