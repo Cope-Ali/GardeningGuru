@@ -32,4 +32,5 @@
     <string name="notes">Notes</string>
     <string name="delete_plant">Delete</string>
     <string name="update_plant">Update</string>
+    <string name="notes_on_task">Notes on task</string>
 </resources>
