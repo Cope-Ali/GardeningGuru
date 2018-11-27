@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         }
          if (garden.getZone() != null) {
                 String string_zone = garden.getZone().getUSDAcode();
-                displayZone.setText(string_zone);
+                displayZone.setText(" Your hardiness zone is: " + string_zone);
             }
 
 
