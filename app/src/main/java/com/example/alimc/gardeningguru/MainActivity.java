@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String GARDEN_NAME = "mainGarden";
     static Garden garden;
-    SharedPreferences mPrefs;
+    public static SharedPreferences mPrefs;
     TextView displayZone;
 
     @Override

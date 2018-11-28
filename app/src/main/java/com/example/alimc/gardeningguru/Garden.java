@@ -1,5 +1,11 @@
 package com.example.alimc.gardeningguru;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
+import com.google.gson.Gson;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +43,32 @@ public class Garden {
         plants = new HashMap<>();
         plantings = new HashMap<>();
         tasksPending = new TreeMap<>();
+    }
+
+    /**
+     * Saves the garden to SharedPreferences
+     */
+    public void saveGarden() {
+        SharedPreferences.Editor prefsEditor = MainActivity.mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(this);
+        prefsEditor.putString("garden", json);
+        prefsEditor.apply();
+    }
+
+    /**
+     * Load the garden from SharedPreferences, and overwrite this garden's members with the loaded information.
+     */
+    public void loadGarden() {
+        Garden newGarden;
+        Gson gson = new Gson();
+        String json = MainActivity.mPrefs.getString("garden", "");
+        newGarden = gson.fromJson(json, Garden.class);
+        this.name = newGarden.getName();
+        this.zone = newGarden.getZone();
+        this.plants = newGarden.getPlants();
+        this.plantings = newGarden.getPlantings();
+        this.tasksPending = newGarden.getTasksPending();
     }
 
     public Zone getZone() {
