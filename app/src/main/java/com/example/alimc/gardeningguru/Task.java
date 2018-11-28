@@ -2,7 +2,11 @@ package com.example.alimc.gardeningguru;
 
 import java.util.Date;
 
+/**
+ * Everything you want to know about tasks in the garden.
+ */
 public class Task {
+    /** The name of the task */
     private String name;
     private String plantingName;
     private Date dueDate;
@@ -10,6 +14,15 @@ public class Task {
     private String description;
     private int rescheduled;
 
+    /**
+     * Constructor taking all members as parameters
+     * @param name the name of the task
+     * @param plantingName the name of the planting
+     * @param dueDate the due date of the task
+     * @param done is the task complete?
+     * @param description description of the task.
+     * @param rescheduled counter to see how many times the task was rescheduled.
+     */
     public Task(String name
             , String plantingName
             , Date dueDate
@@ -24,8 +37,29 @@ public class Task {
         this.rescheduled = rescheduled;
     }
 
+    /**
+     * Task constructor, taking just the name.
+     * @param name the name of the task
+     */
     public Task(String name) {
         this.name = name;
+        plantingName = "";
+        dueDate = null;
+        done = false;
+        description = "";
+        rescheduled = 0;
+    }
+
+    /**
+     * Default Task constructor. Sets everything to empty string, null, false or zero.
+     */
+    public Task() {
+        name = "";
+        plantingName = "";
+        dueDate = null;
+        done = false;
+        description = "";
+        rescheduled = 0;
     }
 
     public String getName() {
