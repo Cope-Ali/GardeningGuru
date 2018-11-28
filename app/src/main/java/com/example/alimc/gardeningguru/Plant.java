@@ -1,5 +1,8 @@
 package com.example.alimc.gardeningguru;
 
+/**
+ * Everything you want to know about a Plant.
+ */
 public class Plant {
 
     private String name;
@@ -10,18 +13,34 @@ public class Plant {
     private Float harvestDay;
     private Float germinationDay;
 
-
+    /**
+     * Default constructor.
+     */
     public Plant(){
-        //default constructor
+        name = "";
+        sowDepth = (float)0;
+        seedSpacing = (float)0;
+        rowSpacing = (float)0;
+        plantNotes = "";
+        harvestDay = (float)0;
+        germinationDay = (float)0;
     }
 
+    /**
+     * Constructor that takes the name of the plant as a string.
+     * @param name the name of the plant as a string.
+     */
     public Plant(String name){
-
         this.name = name;
+        sowDepth = (float)0;
+        seedSpacing = (float)0;
+        rowSpacing = (float)0;
+        plantNotes = "";
+        harvestDay = (float)0;
+        germinationDay = (float)0;
     }
 
     public String getName() {
-
         return name;
     }
 

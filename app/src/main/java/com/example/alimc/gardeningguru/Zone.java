@@ -13,17 +13,15 @@ public class Zone {
     private String tempRange;
 
     /**
+     * Default constructor sets all parameters to an empty string.
+     */
+    public Zone() {zip = ""; USDAcode = ""; tempRange = ""; }
+
+    /**
      * Constructor that takes a zip code.
      * @param zip the 5 digit US zip code used to look up zone information.
      */
-    public Zone(String zip) {
-        this.zip = zip;
-    }
-
-    /**
-     * Default constructor sets all parameters to an empty string.
-     */
-    public Zone () {zip = ""; USDAcode = ""; tempRange = ""; }
+    public Zone(String zip) { this.zip = zip; USDAcode = ""; tempRange = ""; }
 
     /**
      * Checks if the zip code is a valid US zip code.

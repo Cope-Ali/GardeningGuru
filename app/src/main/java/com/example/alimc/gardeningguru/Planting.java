@@ -51,7 +51,11 @@ public class Planting {
         this.plant = plant;
         plantWhen = new Date();
         planted = false;
+        harvested = false;
         weedingInterval = DEFAULT_WEEDING_INTERVAL;
+        daysTillHarvest = 0;
+        notes = "";
+        location = "";
         tasks = new HashMap<>();
     }
 

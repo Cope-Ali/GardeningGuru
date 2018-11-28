@@ -36,6 +36,17 @@ public class Task {
         this.description = description;
         this.rescheduled = rescheduled;
     }
+    /**
+     * Default Task constructor. Date gets set to today's date.
+     */
+    public Task() {
+        name = "";
+        plantingName = "";
+        dueDate = new Date();
+        done = false;
+        description = "";
+        rescheduled = 0;
+    }
 
     /**
      * Task constructor, taking just the name.
@@ -45,18 +56,6 @@ public class Task {
         this.name = name;
         plantingName = "";
         dueDate = null;
-        done = false;
-        description = "";
-        rescheduled = 0;
-    }
-
-    /**
-     * Default Task constructor. Date gets set to today's date.
-     */
-    public Task() {
-        name = "";
-        plantingName = "";
-        dueDate = new Date();
         done = false;
         description = "";
         rescheduled = 0;

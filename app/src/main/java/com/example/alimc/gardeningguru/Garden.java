@@ -3,7 +3,11 @@ package com.example.alimc.gardeningguru;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
+/**
+ * Everything you want to know about a Garden, including it's name, the zone, plants, plantings, and tasks.
+ */
 public class Garden {
 
     private String name;
@@ -12,10 +16,27 @@ public class Garden {
     private Map<String, Planting> plantings;
     private Map<Date, Task> tasksPending;
 
+    /**
+     * Default constructor for Garden.
+     */
+    public Garden() {
+        name = "";
+        zone = new Zone();
+        plants = new HashMap<>();
+        plantings = new HashMap<>();
+        tasksPending = new TreeMap<>();
+    }
+
+    /**
+     * Constructor for Garden that takes a name.
+     * @param name the name of the garden as a string.
+     */
     public Garden(String name) {
         this.name = name;
-        this.zone = new Zone("");
-        this.plants = new HashMap<>();
+        zone = new Zone();
+        plants = new HashMap<>();
+        plantings = new HashMap<>();
+        tasksPending = new TreeMap<>();
     }
 
     public Zone getZone() {
@@ -84,4 +105,11 @@ public class Garden {
         this.tasksPending = tasksPending;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
