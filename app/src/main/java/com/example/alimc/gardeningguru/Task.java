@@ -51,12 +51,12 @@ public class Task {
     }
 
     /**
-     * Default Task constructor. Sets everything to empty string, null, false or zero.
+     * Default Task constructor. Date gets set to today's date.
      */
     public Task() {
         name = "";
         plantingName = "";
-        dueDate = null;
+        dueDate = new Date();
         done = false;
         description = "";
         rescheduled = 0;
@@ -110,5 +110,8 @@ public class Task {
         this.rescheduled = rescheduled;
     }
 
+    /**
+     * Adds 1 to the member: rescheduled.
+     */
     public void incrementRescheduled() {this.rescheduled++; }
 }
