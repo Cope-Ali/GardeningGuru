@@ -33,4 +33,8 @@
     <string name="delete_plant">Delete</string>
     <string name="update_plant">Update</string>
     <string name="notes_on_task">Notes on task</string>
+    <string name="update_planting" />
+    <string name="delete_planting" />
+    <string name="reset_planting" />
+    <string name="add_planting" />
 </resources>

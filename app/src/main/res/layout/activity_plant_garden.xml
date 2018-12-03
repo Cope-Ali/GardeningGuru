@@ -18,8 +18,9 @@
         android:text="@string/dropdown_of_plants"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/plantingName" />
 
     <EditText
         android:id="@+id/plantingDate"
@@ -40,7 +41,7 @@
     <ListView
         android:id="@+id/plantingList"
         android:layout_width="355dp"
-        android:layout_height="209dp"
+        android:layout_height="150dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -54,14 +55,16 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/save"
         app:layout_constraintBottom_toTopOf="@+id/plantingList"
         app:layout_constraintEnd_toStartOf="@+id/button3"
@@ -70,14 +73,16 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/reset_changes"
         app:layout_constraintBottom_toTopOf="@+id/plantingList"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,12 +100,30 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:text="@string/notes"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantingDate"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/plantingDate" />
+
+    <TextView
+        android:id="@+id/plantingName"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Planting Name"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/plantDropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -16,8 +16,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
+/**
+ * @author Ali Cope
+ * @version 1.0
+ * @since 1.0
+ * LookupZip class extends AsyncTask to obtain the hardiness zone from online resource
+ */
 public class LookupZip extends AsyncTask<String, CharSequence, String> {
+
 
     Zone _zone;
     private String _zip;
@@ -26,6 +32,19 @@ public class LookupZip extends AsyncTask<String, CharSequence, String> {
     @SuppressLint("StaticFieldLeak")
     private TextView _viewZone;
 
+
+    /**
+     * LookupZip obtains the hardiness zone by passing in a zipCode and looking it up online
+     * <p>
+     *    method takes a zip code entered by user and sends it to API url. Receives back a JSON
+     *    object that is parsed and save into Zone object within Garden object
+     * </p>
+     * @param zip - zip code entered by user
+     * @param zone - zone object in garden
+     * @param theContext - context of application
+     * @param url - API url
+     * @param ZoneView - view area where zone information is output.
+     */
     LookupZip(String zip, Zone zone, Context theContext, String url, TextView ZoneView){
         _zip = zip;
         _currentContext = theContext;
@@ -34,10 +53,12 @@ public class LookupZip extends AsyncTask<String, CharSequence, String> {
         _zone = zone;
     }
 
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
     }
+
 
     @Override
     protected String doInBackground(String... strings) {
@@ -68,6 +89,9 @@ public class LookupZip extends AsyncTask<String, CharSequence, String> {
             return null;
         }
     }
+
+  
+
     @Override
     protected void onProgressUpdate(CharSequence... values) {
         _viewZone.setText(values[0]);
