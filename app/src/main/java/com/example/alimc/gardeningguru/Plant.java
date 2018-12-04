@@ -17,13 +17,13 @@ public class Plant {
      * Default constructor.
      */
     public Plant(){
-        name = "";
-        sowDepth = (float)0;
-        seedSpacing = (float)0;
-        rowSpacing = (float)0;
-        plantNotes = "";
-        harvestDay = (float)0;
-        germinationDay = (float)0;
+        this.name = "";
+        this.sowDepth = (float)0;
+        this.seedSpacing = (float)0;
+        this.rowSpacing = (float)0;
+        this.plantNotes = "";
+        this.harvestDay = (float)0;
+        this.germinationDay = (float)0;
     }
 
     /**
@@ -32,12 +32,12 @@ public class Plant {
      */
     public Plant(String name){
         this.name = name;
-        sowDepth = (float)0;
-        seedSpacing = (float)0;
-        rowSpacing = (float)0;
-        plantNotes = "";
-        harvestDay = (float)0;
-        germinationDay = (float)0;
+        this.sowDepth = (float)0;
+        this.seedSpacing = (float)0;
+        this.rowSpacing = (float)0;
+        this.plantNotes = "";
+        this.harvestDay = (float)0;
+        this.germinationDay = (float)0;
     }
 
     public String getName() {

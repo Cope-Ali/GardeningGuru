@@ -62,55 +62,70 @@ public class Task {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public String getPlantingName() {
+
         return plantingName;
     }
 
     public void setPlantingName(String plantingName) {
+
         this.plantingName = plantingName;
     }
 
     public Date getDueDate() {
+
         return dueDate;
     }
 
     public void setDueDate(Date dueDate) {
+
         this.dueDate = dueDate;
     }
 
     public boolean isDone() {
+
         return done;
     }
 
     public void setDone(boolean done) {
+
         this.done = done;
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public void setDescription(String description) {
+
         this.description = description;
     }
 
     public int getRescheduled() {
+
         return rescheduled;
     }
 
     public void setRescheduled(int rescheduled) {
+
         this.rescheduled = rescheduled;
     }
 
     /**
      * Adds 1 to the member: rescheduled.
      */
-    public void incrementRescheduled() {this.rescheduled++; }
+    public void incrementRescheduled() {
+
+        this.rescheduled++;
+    }
 }

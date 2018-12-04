@@ -112,36 +112,59 @@ public class Garden {
     }
 
     public Map<String, Planting> getPlantings() {
+
         return plantings;
     }
 
     public void setPlantings(Map<String, Planting> plantings) {
+
         this.plantings = plantings;
     }
 
     //adds one planting from plantings
     public void addPlanting(Planting planting) {
+
         plantings.put(planting.getName(), planting);
     }
 
     //removes one planting from plantings, by searching for the planting name that is passed in
     public void removePlanting(String name) {
+
         plantings.remove(name);
     }
 
     public Map<Date, Task> getTasksPending() {
+
         return tasksPending;
     }
 
     public void setTasksPending(Map<Date, Task> tasksPending) {
+
         this.tasksPending = tasksPending;
     }
 
+    public void addTask(Task task) {
+        //This was added to test addPlant activity
+        if(this.tasksPending == null)
+        {
+            this.tasksPending = new HashMap<>();
+        }
+
+        this.tasksPending.put(task.getDueDate(), task);
+    }
+
+    public void removeTask(Date taskDate) {
+
+        this.tasksPending.remove(taskDate);
+    }
+
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 }

@@ -33,4 +33,14 @@
     <string name="delete_plant">Delete</string>
     <string name="update_plant">Update</string>
     <string name="notes_on_task">Notes on task</string>
+    <string name="title_activity_task_list">TaskList</string>
+    <string name="tasklistLbl">Task View</string>
+    <string name="taskList_plantingTxtv">Planting</string>
+    <string name="dueDateTxtV">Due Date</string>
+    <string name="descriptionTxtV">Description</string>
+    <string name="doneTxtV">Done</string>
+    <string name="editTask">Edit</string>
+    <string name="deleteTask">Delete</string>
+    <string name="taskdate">MM/DD/YYYY</string>
+    <string name="taskeditPlanting">Planting</string>
 </resources>

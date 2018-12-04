@@ -39,17 +39,17 @@ public class AddPlant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_plant);
 
-        this.plantName = (EditText) findViewById(R.id.name);
-        this.sowDepth = (EditText) findViewById(R.id.sowDepth);
+        this.plantName = (EditText) findViewById(R.id.taskNameTxtE);
+        this.sowDepth = (EditText) findViewById(R.id.plantingEtxt);
         this.seedSpacing = (EditText) findViewById(R.id.seedSpacing);
         this.rowSpacing = (EditText) findViewById(R.id.rowSpacing);
         this.harvestDay = (EditText) findViewById(R.id.harvestDays);
-        this.plantNotes = (EditText) findViewById(R.id.plantNotes);
+        this.plantNotes = (EditText) findViewById(R.id.descriptionTxtE);
         this.plantList = (ListView) findViewById(R.id.plantList);
-        this.germinationDay = (EditText) findViewById(R.id.germinationDays);
+        this.germinationDay = (EditText) findViewById(R.id.dueDateTxtE);
         this.plantArrayLocation = (TextView) findViewById(R.id.plantArrayListPosition);
-        this.saveEditBtn = (Button) findViewById(R.id.savePlant);
-        this.resetDeleteBtn = (Button) findViewById(R.id.resetPlant);
+        this.saveEditBtn = (Button) findViewById(R.id.taskEditSaveBtn);
+        this.resetDeleteBtn = (Button) findViewById(R.id.taskEditResetBtn);
         this.setListView();
 
     }

@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.os.Parcelable;
 import com.google.gson.Gson;
+
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -67,6 +68,20 @@ public class MainActivity extends AppCompatActivity {
     public void addPlantOnClick(View view){
 
         Intent intent = new Intent(this, AddPlant.class);
+        startActivity(intent);
+    }
+
+    public void taskViewOnClick(View view){
+
+        //this is to test the task
+        Task task1 = new Task("test1","plant1",new Date(2020,12,28),false,"test",0);
+        Task task2 = new Task("test2","plant2",new Date(2020,1,28),false,"test",0);
+        Task task3 = new Task("test3","plant3",new Date(2020,8,28),false,"test",0);
+        garden.addTask(task1);
+        garden.addTask(task2);
+        garden.addTask(task3);
+
+        Intent intent = new Intent(this, TaskList.class);
         startActivity(intent);
     }
 
