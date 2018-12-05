@@ -39,6 +39,7 @@ public class Planting {
         notes = "";
         location = "";
         tasks = new HashMap<>();
+        computeTasks();
     }
 
     /**
@@ -57,6 +58,7 @@ public class Planting {
         notes = "";
         location = "";
         tasks = new HashMap<>();
+        computeTasks();
     }
 
     /**

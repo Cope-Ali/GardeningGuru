@@ -26,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
         displayZone = findViewById(R.id.viewZone);
         //initialize garden, or load garden if one already exists
         mPrefs = this.getPreferences(MODE_PRIVATE);
+
         if (!mPrefs.contains("garden")) {
             garden = new Garden(GARDEN_NAME);
+            //todo populate data for testing, then remove it for final product
+
         } else if (garden == null) {
             Gson gson = new Gson();
             String json = mPrefs.getString("garden", "");
@@ -38,11 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 displayZone.setText(" Your hardiness zone is: " + string_zone);
             }
 
-
-         //show garden
-        Toast toast=Toast.makeText(getApplicationContext(),garden.getZone().getZip(),Toast.LENGTH_SHORT);
-        toast.show();
-
+        //todo loop through all plantings in garden, and run computeTasks(), to update any tasks that need to be updated.
+        garden.computeTasksPending();
     }
     public void launchZoneLookup(View v) {
         Intent intent = new Intent(this, ZoneLookup.class);

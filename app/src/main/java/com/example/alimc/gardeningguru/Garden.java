@@ -71,6 +71,11 @@ public class Garden {
         this.tasksPending = newGarden.getTasksPending();
     }
 
+    //todo loop through all plantings in garden and put all of thier active tasks into tasksPending
+    public void computeTasksPending() {
+
+    }
+
     public Zone getZone() {
 
         return zone;
