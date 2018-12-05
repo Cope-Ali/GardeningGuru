@@ -1,8 +1,6 @@
 package com.example.alimc.gardeningguru;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 import com.google.gson.Gson;
 
@@ -71,40 +69,40 @@ public class Garden {
         this.tasksPending = newGarden.getTasksPending();
     }
 
-    //todo loop through all plantings in garden and put all of thier active tasks into tasksPending
+    /**
+     * Loop through all of the plantings in garden, and place their tasks into tasksPending, so long
+     * as the task does not already exist in tasksPending.
+     *
+     * <p>tasksPending will automatically sort, since it's a treeMap, so it will be good for things
+     * like showing tasks by due date.</p>
+     */
     public void computeTasksPending() {
-
+        //For each planting in plantings
+        for (Map.Entry<String, Planting> planting : plantings.entrySet()) {
+            //For each task in tasks
+            Map<String, Task> tasks = planting.getValue().getTasksPending();
+            for (Map.Entry<String, Task> task : tasks.entrySet()) {
+                //Put the task in the tasksPending TreeMap, sorted and keyed by Due Date.
+                if (!tasksPending.containsValue(task.getValue())) {
+                    tasksPending.put(task.getValue().getDueDate(), task.getValue());
+                }
+            }
+        }
     }
 
-    public Zone getZone() {
+    public Zone getZone() { return zone; }
 
-        return zone;
-    }
+    public void setZone(Zone zone) { this.zone = zone; }
 
-    public void setZone(Zone zone) {
+    public Map<String, Plant> getPlants() { return this.plants; }
 
-        this.zone = zone;
-    }
+    public Plant getPlant(String key){ return this.plants.get(key); }
 
-    public Map<String, Plant> getPlants() {
-
-        return this.plants;
-    }
-
-    public Plant getPlant(String key){
-
-       return this.plants.get(key);
-    }
-
-    public void setPlants(Map<String, Plant> plants) {
-
-        this.plants = plants;
-    }
+    public void setPlants(Map<String, Plant> plants) { this.plants = plants; }
 
     public void addPlant(Plant plant) {
-        //This was added to test addPlant activity
-        if(this.plants == null)
-        {
+        //This was added to test addPlant activity //todo remove
+        if(this.plants == null) {
             this.plants = new HashMap<>();
         }
 
