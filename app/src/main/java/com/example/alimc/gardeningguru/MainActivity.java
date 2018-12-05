@@ -36,12 +36,11 @@ public class MainActivity extends AppCompatActivity {
             String json = mPrefs.getString("garden", "");
             garden = gson.fromJson(json, Garden.class);
         }
-         if (garden.getZone() != null) {
-                String string_zone = garden.getZone().getUSDAcode();
-                displayZone.setText(" Your hardiness zone is: " + string_zone);
-            }
+        if (garden.getZone() != null) {
+            String string_zone = garden.getZone().getUSDAcode();
+            displayZone.setText(" Your hardiness zone is: " + string_zone);
+        }
 
-        //todo loop through all plantings in garden, and run computeTasks(), to update any tasks that need to be updated.
         garden.computeTasksPending();
     }
     public void launchZoneLookup(View v) {

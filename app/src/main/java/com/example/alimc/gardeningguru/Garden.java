@@ -73,6 +73,8 @@ public class Garden {
      * Loop through all of the plantings in garden, and place their tasks into tasksPending, so long
      * as the task does not already exist in tasksPending.
      *
+     * <p>Performs any updates needed on tasks, by calling computeTasks for each planting.</p>
+     *
      * <p>tasksPending will automatically sort, since it's a treeMap, so it will be good for things
      * like showing tasks by due date.</p>
      */
@@ -80,6 +82,7 @@ public class Garden {
         //For each planting in plantings
         for (Map.Entry<String, Planting> planting : plantings.entrySet()) {
             //For each task in tasks
+            planting.getValue().computeTasks();
             Map<String, Task> tasks = planting.getValue().getTasksPending();
             for (Map.Entry<String, Task> task : tasks.entrySet()) {
                 //Put the task in the tasksPending TreeMap, sorted and keyed by Due Date.
