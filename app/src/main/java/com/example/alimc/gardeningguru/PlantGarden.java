@@ -10,9 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -20,8 +24,10 @@ import java.util.List;
 import static com.example.alimc.gardeningguru.MainActivity.garden;
 
 public class PlantGarden extends AppCompatActivity {
+    Garden garden = MainActivity.garden;
     private Planting newPlanting;
-    private TextView plant; //TODO SELECT FROM DROPDOWN OF PLANT OBJECTS
+    private PlantAdapter plantAdapter;
+    private Spinner plant;
     private PlantingAdapter adapter;
     private List<Planting> plantingArrayList;
     private ListView plantingList;
@@ -31,12 +37,25 @@ public class PlantGarden extends AppCompatActivity {
     private Button saveEditBtn;
     private Button resetDeleteBtn;
     private TextView plantingArrayLocation;
-    //TODO Array of plants for use in dropdown???
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_garden);
+//
+//        //create an arrayAdapter that will contain all the different plants
+//        //from our garden.
+//        Object[] plantObjArray = garden.getPlants().values().toArray();
+//        String[] plantArray = new String[plantObjArray.length];
+//        for(int i = 0; i< plantObjArray.length; i++)
+//        {
+//            plantArray[i] = plantObjArray[i].toString();
+//        }
+
+        //ArrayAdapter <CharSequence> plantAdapter = ArrayAdapter.createFromResource(this, R.array.android.R.layout.simple_spinner_item);
+        plantAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        plant.setAdapter(plantAdapter);
 
         this.plDate = (EditText) findViewById(R.id.plantingDate);
         this.plantingName = (TextView) findViewById(R.id.plantingName);
@@ -118,7 +137,7 @@ public class PlantGarden extends AppCompatActivity {
 
     public void plantingToInput(Planting planting){
         this.plantingName.setText(planting.getName());
-        this.plant.setText(planting.getPlant().toString());
+        //this.plant.setPlant(planting.getPlant().toString());
         this.plantingNotes.setText(planting.getNotes());
         this.plDate.setText(planting.getPlantWhen().toString());
     }
