@@ -30,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
         if (!mPrefs.contains("garden")) {
             garden = new Garden(GARDEN_NAME);
             //todo populate data for testing, then remove it for final product
+            Plant plant = new Plant("carrot");
+            plant.setDaysTillGermination(21);
+            plant.setDaysTillHarvest(40);
+            plant.setPlantNotes("notes about the plant");
+            plant.setRowSpacing((float)12);
+            plant.setSeedSpacing((float)1.5);
+            plant.setSowDepth((float).5);
+            garden.addPlant(plant);
+            Planting planting = new Planting(plant.getName() + (new Date()).toString(), plant);
+            planting.setDaysTillThin(plant.getDaysTillGermination() +  3);
+            planting.setLocation("bed 1");
+            planting.setNotes("notes about the planting");
+            planting.setPlantWhen(new Date());
+            garden.addPlanting(planting);
+
 
         } else if (garden == null) {
             Gson gson = new Gson();

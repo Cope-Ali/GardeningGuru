@@ -17,7 +17,6 @@ public class Planting {
     private boolean planted;
     private boolean harvested;
     private int weedingInterval;
-    private int daysTillHarvest;
     private int germinationDays;
     private int daysTillThin;
     private String notes;
@@ -35,7 +34,6 @@ public class Planting {
         planted = false;
         harvested = false;
         weedingInterval = DEFAULT_WEEDING_INTERVAL;
-        daysTillHarvest = 0;
         notes = "";
         location = "";
         tasks = new HashMap<>();
@@ -54,7 +52,6 @@ public class Planting {
         planted = false;
         harvested = false;
         weedingInterval = DEFAULT_WEEDING_INTERVAL;
-        daysTillHarvest = 0;
         notes = "";
         location = "";
         tasks = new HashMap<>();
@@ -179,7 +176,7 @@ public class Planting {
      * @return a Date.
      */
     public Date computeHarvestDate() {
-        return addDaysToDate(plantWhen, daysTillHarvest);
+        return addDaysToDate(plantWhen, plant.getDaysTillHarvest());
     }
 
     /**
@@ -255,11 +252,11 @@ public class Planting {
     }
 
     public int getDaysTillHarvest() {
-        return daysTillHarvest;
+        return plant.getDaysTillHarvest();
     }
 
     public void setDaysTillHarvest(int daysTillHarvest) {
-        this.daysTillHarvest = daysTillHarvest;
+        plant.setDaysTillHarvest(daysTillHarvest);
     }
 
     public int getGerminationDays() {
