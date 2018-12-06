@@ -7,7 +7,7 @@
     tools:context=".AddPlant">
 
     <EditText
-        android:id="@+id/name"
+        android:id="@+id/taskNameTxtE"
         android:layout_width="0dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
@@ -19,13 +19,13 @@
         android:hint="@string/plantName"
         android:importantForAutofill="no"
         android:inputType="none|textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/sowDepth"
+        app:layout_constraintEnd_toStartOf="@+id/plantingEtxt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="o" />
 
     <EditText
-        android:id="@+id/sowDepth"
+        android:id="@+id/plantingEtxt"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -39,7 +39,7 @@
         android:inputType="number"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintStart_toEndOf="@+id/taskNameTxtE"
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="o" />
 
@@ -58,7 +58,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/rowSpacing"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/taskNameTxtE"
         tools:targetApi="o" />
 
     <EditText
@@ -76,11 +76,11 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/seedSpacing"
-        app:layout_constraintTop_toBottomOf="@+id/sowDepth"
+        app:layout_constraintTop_toBottomOf="@+id/plantingEtxt"
         tools:targetApi="o" />
 
     <EditText
-        android:id="@+id/plantNotes"
+        android:id="@+id/descriptionTxtE"
         android:layout_width="0dp"
         android:layout_height="71dp"
         android:layout_marginStart="16dp"
@@ -95,11 +95,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/germinationDays"
+        app:layout_constraintTop_toBottomOf="@+id/dueDateTxtE"
         tools:targetApi="o" />
 
     <EditText
-        android:id="@+id/germinationDays"
+        android:id="@+id/dueDateTxtE"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -130,12 +130,12 @@
         android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/germinationDays"
+        app:layout_constraintStart_toEndOf="@+id/dueDateTxtE"
         app:layout_constraintTop_toBottomOf="@+id/rowSpacing"
         tools:targetApi="o" />
 
     <Button
-        android:id="@+id/savePlant"
+        android:id="@+id/taskEditSaveBtn"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="49dp"
@@ -147,9 +147,9 @@
         android:background="@color/colorPrimaryDark"
         android:onClick="onClickPlantSaveBtn"
         android:text="@string/add_plant"
-        app:layout_constraintEnd_toStartOf="@+id/resetPlant"
+        app:layout_constraintEnd_toStartOf="@+id/taskEditResetBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTxtE" />
 
     <ListView
         android:id="@+id/plantList"
@@ -164,10 +164,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resetPlant" />
+        app:layout_constraintTop_toBottomOf="@+id/taskEditResetBtn" />
 
     <Button
-        android:id="@+id/resetPlant"
+        android:id="@+id/taskEditResetBtn"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -180,8 +180,8 @@
         android:onClick="onClickPlantResetBtn"
         android:text="@string/reset_plant"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/savePlant"
-        app:layout_constraintTop_toBottomOf="@+id/plantNotes" />
+        app:layout_constraintStart_toEndOf="@+id/taskEditSaveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTxtE" />
 
     <TextView
         android:id="@+id/plantArrayListPosition"

@@ -1,8 +1,6 @@
 package com.example.alimc.gardeningguru;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 import com.google.gson.Gson;
 
@@ -71,35 +69,43 @@ public class Garden {
         this.tasksPending = newGarden.getTasksPending();
     }
 
-    public Zone getZone() {
-
-        return zone;
+    /**
+     * Loop through all of the plantings in garden, and place their tasks into tasksPending, so long
+     * as the task does not already exist in tasksPending.
+     *
+     * <p>Performs any updates needed on tasks, by calling computeTasks for each planting.</p>
+     *
+     * <p>tasksPending will automatically sort, since it's a treeMap, so it will be good for things
+     * like showing tasks by due date.</p>
+     */
+    public void computeTasksPending() {
+        //For each planting in plantings
+        for (Map.Entry<String, Planting> planting : plantings.entrySet()) {
+            //For each task in tasks
+            planting.getValue().computeTasks();
+            Map<String, Task> tasks = planting.getValue().getTasksPending();
+            for (Map.Entry<String, Task> task : tasks.entrySet()) {
+                //Put the task in the tasksPending TreeMap, sorted and keyed by Due Date.
+                if (!tasksPending.containsValue(task.getValue())) {
+                    tasksPending.put(task.getValue().getDueDate(), task.getValue());
+                }
+            }
+        }
     }
 
-    public void setZone(Zone zone) {
+    public Zone getZone() { return zone; }
 
-        this.zone = zone;
-    }
+    public void setZone(Zone zone) { this.zone = zone; }
 
-    public Map<String, Plant> getPlants() {
+    public Map<String, Plant> getPlants() { return this.plants; }
 
-        return this.plants;
-    }
+    public Plant getPlant(String key){ return this.plants.get(key); }
 
-    public Plant getPlant(String key){
-
-       return this.plants.get(key);
-    }
-
-    public void setPlants(Map<String, Plant> plants) {
-
-        this.plants = plants;
-    }
+    public void setPlants(Map<String, Plant> plants) { this.plants = plants; }
 
     public void addPlant(Plant plant) {
-        //This was added to test addPlant activity
-        if(this.plants == null)
-        {
+        //This was added to test addPlant activity //todo remove
+        if(this.plants == null) {
             this.plants = new HashMap<>();
         }
 
@@ -112,36 +118,59 @@ public class Garden {
     }
 
     public Map<String, Planting> getPlantings() {
+
         return plantings;
     }
 
     public void setPlantings(Map<String, Planting> plantings) {
+
         this.plantings = plantings;
     }
 
     //adds one planting from plantings
     public void addPlanting(Planting planting) {
+
         plantings.put(planting.getName(), planting);
     }
 
     //removes one planting from plantings, by searching for the planting name that is passed in
     public void removePlanting(String name) {
+
         plantings.remove(name);
     }
 
     public Map<Date, Task> getTasksPending() {
+
         return tasksPending;
     }
 
     public void setTasksPending(Map<Date, Task> tasksPending) {
+
         this.tasksPending = tasksPending;
     }
 
+    public void addTask(Task task) {
+        //This was added to test addPlant activity
+        if(this.tasksPending == null)
+        {
+            this.tasksPending = new HashMap<>();
+        }
+
+        this.tasksPending.put(task.getDueDate(), task);
+    }
+
+    public void removeTask(Date taskDate) {
+
+        this.tasksPending.remove(taskDate);
+    }
+
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 }

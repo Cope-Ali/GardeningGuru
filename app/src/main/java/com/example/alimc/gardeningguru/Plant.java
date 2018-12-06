@@ -10,20 +10,20 @@ public class Plant {
     private Float seedSpacing;
     private Float rowSpacing;
     private String plantNotes;
-    private Float harvestDay;
-    private Float germinationDay;
+    private int daysTillHarvest;
+    private int daysTillGermination;
 
     /**
      * Default constructor.
      */
     public Plant(){
-        name = "";
-        sowDepth = (float)0;
-        seedSpacing = (float)0;
-        rowSpacing = (float)0;
-        plantNotes = "";
-        harvestDay = (float)0;
-        germinationDay = (float)0;
+        this.name = "";
+        this.sowDepth = (float)0;
+        this.seedSpacing = (float)0;
+        this.rowSpacing = (float)0;
+        this.plantNotes = "";
+        this.daysTillHarvest = 0;
+        this.daysTillGermination = 0;
     }
 
     /**
@@ -32,12 +32,12 @@ public class Plant {
      */
     public Plant(String name){
         this.name = name;
-        sowDepth = (float)0;
-        seedSpacing = (float)0;
-        rowSpacing = (float)0;
-        plantNotes = "";
-        harvestDay = (float)0;
-        germinationDay = (float)0;
+        this.sowDepth = (float)0;
+        this.seedSpacing = (float)0;
+        this.rowSpacing = (float)0;
+        this.plantNotes = "";
+        this.daysTillHarvest = 0;
+        this.daysTillGermination = 0;
     }
 
     public String getName() {
@@ -89,22 +89,22 @@ public class Plant {
         this.plantNotes = plantNotes;
     }
 
-    public Float getHarvestDay(){
+    public int getDaysTillHarvest(){
 
-        return harvestDay;
+        return daysTillHarvest;
     }
 
-    public void setHarvestDay(Float harvestDay){
+    public void setDaysTillHarvest(int daysTillHarvest){
 
-        this.harvestDay = harvestDay;
+        this.daysTillHarvest = daysTillHarvest;
     }
 
-    public Float getGerminationDay(){
-        return this.germinationDay;
+    public int getDaysTillGermination(){
+        return this.daysTillGermination;
     }
 
-    public void setGerminationDay(Float germinationDay){
-        this.germinationDay = germinationDay;
+    public void setDaysTillGermination(int daysTillGermination){
+        this.daysTillGermination = daysTillGermination;
     }
 
 

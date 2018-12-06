@@ -88,6 +88,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
+        android:onClick="taskViewOnClick"
         android:text="@string/edit_reminders"
         app:layout_constraintBottom_toTopOf="@+id/EditPlant"
         app:layout_constraintEnd_toEndOf="parent"

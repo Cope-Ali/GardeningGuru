@@ -39,17 +39,17 @@ public class AddPlant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_plant);
 
-        this.plantName = (EditText) findViewById(R.id.name);
-        this.sowDepth = (EditText) findViewById(R.id.sowDepth);
+        this.plantName = (EditText) findViewById(R.id.taskNameTxtE);
+        this.sowDepth = (EditText) findViewById(R.id.plantingEtxt);
         this.seedSpacing = (EditText) findViewById(R.id.seedSpacing);
         this.rowSpacing = (EditText) findViewById(R.id.rowSpacing);
         this.harvestDay = (EditText) findViewById(R.id.harvestDays);
-        this.plantNotes = (EditText) findViewById(R.id.plantNotes);
+        this.plantNotes = (EditText) findViewById(R.id.descriptionTxtE);
         this.plantList = (ListView) findViewById(R.id.plantList);
-        this.germinationDay = (EditText) findViewById(R.id.germinationDays);
+        this.germinationDay = (EditText) findViewById(R.id.dueDateTxtE);
         this.plantArrayLocation = (TextView) findViewById(R.id.plantArrayListPosition);
-        this.saveEditBtn = (Button) findViewById(R.id.savePlant);
-        this.resetDeleteBtn = (Button) findViewById(R.id.resetPlant);
+        this.saveEditBtn = (Button) findViewById(R.id.taskEditSaveBtn);
+        this.resetDeleteBtn = (Button) findViewById(R.id.taskEditResetBtn);
         this.setListView();
 
     }
@@ -109,8 +109,8 @@ public class AddPlant extends AppCompatActivity {
         plant.setRowSpacing(Float.parseFloat(this.rowSpacing.getText().toString()));
         plant.setSeedSpacing(Float.parseFloat(this.seedSpacing.getText().toString()));
         plant.setPlantNotes(this.plantNotes.getText().toString());
-        plant.setHarvestDay(Float.parseFloat(this.harvestDay.getText().toString()));
-        plant.setGerminationDay(Float.parseFloat(this.germinationDay.getText().toString()));
+        plant.setDaysTillHarvest(Integer.parseInt(this.harvestDay.getText().toString()));
+        plant.setDaysTillGermination(Integer.parseInt(this.germinationDay.getText().toString()));
     }
 
 
@@ -119,9 +119,9 @@ public class AddPlant extends AppCompatActivity {
         this.sowDepth.setText(plant.getSowDepth().toString());
         this.seedSpacing.setText(plant.getSeedSpacing().toString());
         this.rowSpacing.setText(plant.getRowSpacing().toString());
-        this.harvestDay.setText(plant.getHarvestDay().toString());
+        this.harvestDay.setText(Integer.valueOf(plant.getDaysTillHarvest()).toString());
         this.plantNotes.setText(plant.getPlantNotes());
-        this.germinationDay.setText(plant.getGerminationDay().toString());
+        this.germinationDay.setText(Integer.valueOf(plant.getDaysTillGermination()).toString());
     }
 
 
