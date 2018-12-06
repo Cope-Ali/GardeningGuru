@@ -51,8 +51,8 @@ public class PlantGarden extends AppCompatActivity {
         this.plantingName = (TextView) findViewById(R.id.plantingName);
         this.plantingNotes = (EditText) findViewById(R.id.plantingNotes);
         this.plantingList = (ListView) findViewById(R.id.plantingList);
-        this.saveEditBtn = (Button) findViewById(R.id.savePlant);
-        this.resetDeleteBtn = (Button) findViewById(R.id.resetPlant);
+        //this.saveEditBtn = (Button) findViewById(R.id.savePlant);
+        //this.resetDeleteBtn = (Button) findViewById(R.id.resetPlant);
         this.plantingArrayLocation = (TextView) findViewById(R.id.plantingArrayListPosition);
         this.plant = findViewById(R.id.plantDropdown);
         this.setListView();
