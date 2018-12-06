@@ -44,8 +44,8 @@ public class PlantGarden extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_garden);
 
-        plantAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        plant.setAdapter(plantAdapter);
+       // plantAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //plant.setAdapter(plantAdapter);
 
         this.plDate = (EditText) findViewById(R.id.plantingDate);
         this.plantingName = (TextView) findViewById(R.id.plantingName);
