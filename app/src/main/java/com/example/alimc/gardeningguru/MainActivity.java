@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             planting.setLocation("bed 1");
             planting.setNotes("notes about the planting");
             planting.setPlantWhen(new Date());
+            planting.computeTasks();
             garden.addPlanting(planting);
+            garden.computeTasksPending();
 
 
         } else if (garden == null) {
