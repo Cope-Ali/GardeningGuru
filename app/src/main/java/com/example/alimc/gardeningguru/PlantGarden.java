@@ -43,17 +43,7 @@ public class PlantGarden extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_garden);
-//
-//        //create an arrayAdapter that will contain all the different plants
-//        //from our garden.
-//        Object[] plantObjArray = garden.getPlants().values().toArray();
-//        String[] plantArray = new String[plantObjArray.length];
-//        for(int i = 0; i< plantObjArray.length; i++)
-//        {
-//            plantArray[i] = plantObjArray[i].toString();
-//        }
 
-        //ArrayAdapter <CharSequence> plantAdapter = ArrayAdapter.createFromResource(this, R.array.android.R.layout.simple_spinner_item);
         plantAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         plant.setAdapter(plantAdapter);
 

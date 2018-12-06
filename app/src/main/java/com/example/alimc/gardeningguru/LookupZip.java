@@ -90,7 +90,7 @@ public class LookupZip extends AsyncTask<String, CharSequence, String> {
         }
     }
 
-  
+
 
     @Override
     protected void onProgressUpdate(CharSequence... values) {
