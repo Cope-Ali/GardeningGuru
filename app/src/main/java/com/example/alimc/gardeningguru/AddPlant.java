@@ -109,8 +109,8 @@ public class AddPlant extends AppCompatActivity {
         plant.setRowSpacing(Float.parseFloat(this.rowSpacing.getText().toString()));
         plant.setSeedSpacing(Float.parseFloat(this.seedSpacing.getText().toString()));
         plant.setPlantNotes(this.plantNotes.getText().toString());
-        plant.setHarvestDay(Float.parseFloat(this.harvestDay.getText().toString()));
-        plant.setGerminationDay(Float.parseFloat(this.germinationDay.getText().toString()));
+        plant.setDaysTillHarvest(Integer.parseInt(this.harvestDay.getText().toString()));
+        plant.setDaysTillGermination(Integer.parseInt(this.germinationDay.getText().toString()));
     }
 
 
@@ -119,9 +119,9 @@ public class AddPlant extends AppCompatActivity {
         this.sowDepth.setText(plant.getSowDepth().toString());
         this.seedSpacing.setText(plant.getSeedSpacing().toString());
         this.rowSpacing.setText(plant.getRowSpacing().toString());
-        this.harvestDay.setText(plant.getHarvestDay().toString());
+        this.harvestDay.setText(Integer.valueOf(plant.getDaysTillHarvest()).toString());
         this.plantNotes.setText(plant.getPlantNotes());
-        this.germinationDay.setText(plant.getGerminationDay().toString());
+        this.germinationDay.setText(Integer.valueOf(plant.getDaysTillGermination()).toString());
     }
 
 
