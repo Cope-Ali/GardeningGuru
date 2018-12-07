@@ -40,12 +40,13 @@ public class Task {
      * Default Task constructor. Date gets set to today's date.
      */
     public Task() {
-        name = "";
+        super();
+        /*name = "";
         plantingName = "";
         dueDate = new Date();
         done = false;
         description = "";
-        rescheduled = 0;
+        rescheduled = 0;*/
     }
 
     /**

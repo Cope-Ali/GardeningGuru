@@ -17,13 +17,14 @@ public class Plant {
      * Default constructor.
      */
     public Plant(){
-        this.name = "";
+        super();
+        /*this.name = "";
         this.sowDepth = (float)0;
         this.seedSpacing = (float)0;
         this.rowSpacing = (float)0;
         this.plantNotes = "";
         this.daysTillHarvest = 0;
-        this.daysTillGermination = 0;
+        this.daysTillGermination = 0;*/
     }
 
     /**

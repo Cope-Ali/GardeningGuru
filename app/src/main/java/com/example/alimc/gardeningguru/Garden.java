@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,12 +24,14 @@ public class Garden {
     /**
      * Default constructor for Garden.
      */
-    public Garden() {
+    public Garden() { super();
+        /*
         name = "";
         zone = new Zone();
         plants = new HashMap<>();
         plantings = new HashMap<>();
         tasksPending = new TreeMap<>();
+        */
     }
 
     /**
