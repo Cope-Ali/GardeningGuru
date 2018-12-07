@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
 
 import java.util.Date;
 
@@ -46,19 +49,25 @@ public class MainActivity extends AppCompatActivity {
             planting.computeTasks();
             garden.addPlanting(planting);
             garden.computeTasksPending();
-
-
         } else if (garden == null) {
-            Gson gson = new Gson();
+            //Gson gson = new Gson();
+
+            Gson gson = new GsonBuilder()
+                    .setDateFormat("MMM d, yyyy h:mm:ss aa") //this works for some but not all...
+                    .create();
             String json = mPrefs.getString("garden", "");
-            garden = gson.fromJson(json, Garden.class);
+            Log.d("MainActivity:onCreate:", "Garden Json String: " + json);
+            //garden = gson.fromJson(json, Garden.class); //disabled while working on loading garden...
         }
+        /* disabled while working on loading garden from shared prefs
         if (garden.getZone() != null) {
             String string_zone = garden.getZone().getUSDAcode();
             displayZone.setText(" Your hardiness zone is: " + string_zone);
         }
 
-        garden.computeTasksPending();
+
+        //garden.computeTasksPending();
+        */ //disabled while working on loading garden from shared prefs
     }
     public void launchZoneLookup(View v) {
         Intent intent = new Intent(this, ZoneLookup.class);
@@ -106,5 +115,7 @@ public class MainActivity extends AppCompatActivity {
      //   Intent intent = new Intent(this, PlantGarden.class);
      //   startActivity(intent);
   //  }
+
+
 
 }

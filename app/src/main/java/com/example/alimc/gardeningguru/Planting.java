@@ -28,7 +28,8 @@ public class Planting {
      * Default constructor for Planting.
      */
     public Planting() {
-        name = "";
+        super();
+        /*name = "";
         plant = new Plant();
         plantWhen = new Date();
         planted = false;
@@ -37,7 +38,7 @@ public class Planting {
         notes = "";
         location = "";
         tasks = new HashMap<>();
-        computeTasks();
+        computeTasks();*/
     }
 
     /**
