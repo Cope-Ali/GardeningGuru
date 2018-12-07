@@ -20,10 +20,11 @@
         android:hint="@string/enterZip"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/enter_zip_code" tools:targetApi="o"/>
+        tools:targetApi="o"
+        tools:text="@string/enter_zip_code" />
 
     <TextView
         android:id="@+id/zoneViewLookup"
@@ -44,27 +45,30 @@
 
     <Button
         android:id="@+id/submitZip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="161dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/submit_zip_code"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/zipInput" />
 
     <Button
         android:id="@+id/saveZone"
-        android:layout_width="134dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="168dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/save_zone_info"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/submitZip" />
 </android.support.constraint.ConstraintLayout>

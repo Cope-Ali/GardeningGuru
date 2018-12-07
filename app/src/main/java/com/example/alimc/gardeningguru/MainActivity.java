@@ -101,4 +101,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+   // public void addPlantingOnClick(View view){
+
+     //   Intent intent = new Intent(this, PlantGarden.class);
+     //   startActivity(intent);
+  //  }
+
 }
