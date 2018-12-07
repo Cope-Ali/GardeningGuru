@@ -72,7 +72,7 @@
         android:ems="10"
         android:hint="@string/taskdate"
         android:importantForAutofill="no"
-        android:inputType="date"
+        android:inputType="datetime"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taskNameTxtE"
         tools:targetApi="o" />

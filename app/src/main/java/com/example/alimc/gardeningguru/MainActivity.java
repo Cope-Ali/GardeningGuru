@@ -49,6 +49,12 @@ public class MainActivity extends AppCompatActivity {
             planting.computeTasks();
             garden.addPlanting(planting);
             garden.computeTasksPending();
+            Zone zone = new Zone();
+            zone.setUSDAcode("7a");
+            zone.setZip("96002");
+           // garden.setZone(zone);
+           // String string_zone = garden.getZone().getUSDAcode();
+          //  displayZone.setText(" Your hardiness zone is: " + string_zone);
         } else if (garden == null) {
             //Gson gson = new Gson();
 
@@ -59,15 +65,19 @@ public class MainActivity extends AppCompatActivity {
             Log.d("MainActivity:onCreate:", "Garden Json String: " + json);
             //garden = gson.fromJson(json, Garden.class); //disabled while working on loading garden...
         }
-        /* disabled while working on loading garden from shared prefs
-        if (garden.getZone() != null) {
-            String string_zone = garden.getZone().getUSDAcode();
-            displayZone.setText(" Your hardiness zone is: " + string_zone);
-        }
-
+        // disabled while working on loading garden from shared prefs
+     /*  if (garden != null) {
+           if (garden.getZone() != null) {
+               String string_zone = garden.getZone().getUSDAcode();
+               displayZone.setText(" Your hardiness zone is: " + string_zone);
+           } else {
+               Zone newZone = new Zone();
+               garden.setZone(newZone);
+           }
+       }*/
 
         //garden.computeTasksPending();
-        */ //disabled while working on loading garden from shared prefs
+         //disabled while working on loading garden from shared prefs
     }
     public void launchZoneLookup(View v) {
         Intent intent = new Intent(this, ZoneLookup.class);
