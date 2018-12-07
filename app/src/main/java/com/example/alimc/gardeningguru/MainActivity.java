@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             planting.setDaysTillThin(plant.getDaysTillGermination() +  3);
             planting.setLocation("bed 1");
             planting.setNotes("notes about the planting");
-            planting.setPlantWhen(new Date());
+            //planting.setPlantWhen(new Date());
             planting.computeTasks();
             garden.addPlanting(planting);
             garden.computeTasksPending();
@@ -110,11 +110,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-   // public void addPlantingOnClick(View view){
+    public void addPlantingOnClick(View view){
 
-     //   Intent intent = new Intent(this, PlantGarden.class);
-     //   startActivity(intent);
-  //  }
+        Intent intent = new Intent(this, PlantGarden.class);
+        startActivity(intent);
+   }
 
 
 
