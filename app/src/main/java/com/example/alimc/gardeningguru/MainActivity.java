@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
             planting.setDaysTillThin(plant.getDaysTillGermination() +  3);
             planting.setLocation("bed 1");
             planting.setNotes("notes about the planting");
-            //planting.setPlantWhen(new Date());
+            planting.setPlantWhen(new Date());
             planting.computeTasks();
             garden.addPlanting(planting);
             garden.computeTasksPending();
             Zone zone = new Zone();
             zone.setUSDAcode("7a");
             zone.setZip("96002");
-           // garden.setZone(zone);
+            //garden.setZone(zone);
            // String string_zone = garden.getZone().getUSDAcode();
           //  displayZone.setText(" Your hardiness zone is: " + string_zone);
         } else if (garden == null) {
@@ -62,11 +62,10 @@ public class MainActivity extends AppCompatActivity {
                     .setDateFormat("MMM d, yyyy h:mm:ss aa") //this works for some but not all...
                     .create();
             String json = mPrefs.getString("garden", "");
-            Log.d("MainActivity:onCreate:", "Garden Json String: " + json);
-            //garden = gson.fromJson(json, Garden.class); //disabled while working on loading garden...
+            Log.d("MainActivity:onCreate:", "Loading Garden Json String: " + json);
+            garden = gson.fromJson(json, Garden.class); //disabled while working on loading garden...
         }
-        // disabled while working on loading garden from shared prefs
-     /*  if (garden != null) {
+        if (garden != null) {
            if (garden.getZone() != null) {
                String string_zone = garden.getZone().getUSDAcode();
                displayZone.setText(" Your hardiness zone is: " + string_zone);
@@ -74,10 +73,9 @@ public class MainActivity extends AppCompatActivity {
                Zone newZone = new Zone();
                garden.setZone(newZone);
            }
-       }*/
+        }
 
-        //garden.computeTasksPending();
-         //disabled while working on loading garden from shared prefs
+        garden.computeTasksPending();
     }
     public void launchZoneLookup(View v) {
         Intent intent = new Intent(this, ZoneLookup.class);
@@ -98,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         String json = gson.toJson(garden); // myObject - instance of MyObject
         prefsEditor.putString("garden", json);
         prefsEditor.apply();
+        Log.d("MainActivity:onCreate:", "Saving Garden Json String: " + json);
     }
 
     public void addPlantOnClick(View view){

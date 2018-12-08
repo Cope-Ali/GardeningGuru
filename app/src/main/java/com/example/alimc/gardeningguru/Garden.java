@@ -10,6 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+/*
+todo : change treemap string format, so that the treemap sorts by date... preferably yyyymmdd
+ */
 /**
  * Everything you want to know about a Garden, including it's name, the zone, plants, plantings, and tasks.
  */
@@ -19,7 +22,7 @@ public class Garden {
     private Zone zone;
     private Map<String, Plant> plants;
     private Map<String, Planting> plantings;
-    private Map<Date, Task> tasksPending;
+    private Map<String, Task> tasksPending;
 
     /**
      * Default constructor for Garden.
@@ -90,7 +93,7 @@ public class Garden {
             for (Map.Entry<String, Task> task : tasks.entrySet()) {
                 //Put the task in the tasksPending TreeMap, sorted and keyed by Due Date.
                 if (!tasksPending.containsValue(task.getValue())) {
-                    tasksPending.put(task.getValue().getDueDate(), task.getValue());
+                    tasksPending.put(task.getValue().getDueDate().toString(), task.getValue());
                 }
             }
         }
@@ -142,12 +145,12 @@ public class Garden {
         plantings.remove(name);
     }
 
-    public Map<Date, Task> getTasksPending() {
+    public Map<String, Task> getTasksPending() {
 
         return tasksPending;
     }
 
-    public void setTasksPending(Map<Date, Task> tasksPending) {
+    public void setTasksPending(Map<String, Task> tasksPending) {
 
         this.tasksPending = tasksPending;
     }
@@ -159,7 +162,7 @@ public class Garden {
             this.tasksPending = new HashMap<>();
         }
 
-        this.tasksPending.put(task.getDueDate(), task);
+        this.tasksPending.put(task.getDueDate().toString(), task);
     }
 
     public void removeTask(Date taskDate) {
