@@ -12,6 +12,9 @@ import java.util.TreeMap;
 
 /*
 todo : change treemap string format, so that the treemap sorts by date... preferably yyyymmdd
+I think I can just change the date object that this is inherited from, probably in Task.
+I think a good explanation of this is here: https://stackoverflow.com/questions/5683728/convert-java-util-date-to-string
+If the original format is good, then it should fix the string here...
  */
 /**
  * Everything you want to know about a Garden, including it's name, the zone, plants, plantings, and tasks.
