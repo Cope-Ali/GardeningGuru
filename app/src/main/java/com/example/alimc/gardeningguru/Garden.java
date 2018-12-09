@@ -1,8 +1,10 @@
 package com.example.alimc.gardeningguru;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 import java.util.Date;
@@ -68,8 +70,11 @@ public class Garden {
      */
     public void loadGarden() {
         Garden newGarden;
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .setDateFormat("MMM d, yyyy h:mm:ss aa")
+                .create();
         String json = MainActivity.mPrefs.getString("garden", "");
+        Log.d("MainActivity:onCreate:", "Loading Garden Json String: " + json);
         newGarden = gson.fromJson(json, Garden.class);
         this.name = newGarden.getName();
         this.zone = newGarden.getZone();

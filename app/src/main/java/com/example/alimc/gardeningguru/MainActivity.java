@@ -56,14 +56,8 @@ public class MainActivity extends AppCompatActivity {
            // String string_zone = garden.getZone().getUSDAcode();
           //  displayZone.setText(" Your hardiness zone is: " + string_zone);
         } else if (garden == null) {
-            //Gson gson = new Gson();
-
-            Gson gson = new GsonBuilder()
-                    .setDateFormat("MMM d, yyyy h:mm:ss aa") //this works for some but not all...
-                    .create();
-            String json = mPrefs.getString("garden", "");
-            Log.d("MainActivity:onCreate:", "Loading Garden Json String: " + json);
-            garden = gson.fromJson(json, Garden.class); //disabled while working on loading garden...
+            garden = new Garden();
+            garden.loadGarden();
         }
         if (garden != null) {
            if (garden.getZone() != null) {
