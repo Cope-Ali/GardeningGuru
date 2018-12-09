@@ -82,15 +82,9 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         //for testing
         //garden.setZone(new Zone("85041"));
-        //
 
-        mPrefs = this.getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor = mPrefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(garden); // myObject - instance of MyObject
-        prefsEditor.putString("garden", json);
-        prefsEditor.apply();
-        Log.d("MainActivity:onCreate:", "Saving Garden Json String: " + json);
+        //Save the garden when this activity is paused.
+        garden.saveGarden();
     }
 
     public void addPlantOnClick(View view){

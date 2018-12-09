@@ -62,6 +62,7 @@ public class Garden {
         Gson gson = new Gson();
         String json = gson.toJson(this);
         prefsEditor.putString("garden", json);
+        Log.d("Garden.saveGarden()", "" + json);
         prefsEditor.apply();
     }
 
@@ -74,7 +75,7 @@ public class Garden {
                 .setDateFormat("MMM d, yyyy h:mm:ss aa")
                 .create();
         String json = MainActivity.mPrefs.getString("garden", "");
-        Log.d("MainActivity:onCreate:", "Loading Garden Json String: " + json);
+        Log.d("Garden.loadGarden()", "" + json);
         newGarden = gson.fromJson(json, Garden.class);
         this.name = newGarden.getName();
         this.zone = newGarden.getZone();
