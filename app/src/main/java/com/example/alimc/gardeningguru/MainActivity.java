@@ -77,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
     }
 //TODO get zone to update from garden.zone.getUSDAcode after it is reset
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        displayZone.setText(" Your hardiness zone is: " + garden.getZone().getUSDAcode());
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
