@@ -54,20 +54,10 @@ public class MainActivity extends AppCompatActivity {
             zone.setZip("96002");
             garden.setZone(zone);
             String string_zone = garden.getZone().getUSDAcode();
-            displayZone.setText(" Your hardiness zone is: " + string_zone);
         } else if (garden == null) { //The garden was already saved to shared preferences.
             //Load the garden from shared preferences.
             garden = new Garden();
             garden.loadGarden();
-        }
-        if (garden != null) {
-           if (garden.getZone() != null) {
-               String string_zone = garden.getZone().getUSDAcode();
-               displayZone.setText(" Your hardiness zone is: " + string_zone);
-           } else {
-               Zone newZone = new Zone();
-               garden.setZone(newZone);
-           }
         }
         garden.computeTasksPending();
     }
