@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         //initialize garden, or load garden if one already exists
         mPrefs = this.getPreferences(MODE_PRIVATE);
 
-        if (!mPrefs.contains("garden")) {
+        if (!mPrefs.contains("garden")) { // No garden exists in shared preferences.
             garden = new Garden(GARDEN_NAME);
             //todo populate data for testing, then remove it for final product
             Plant plant = new Plant("carrot");
@@ -52,10 +52,11 @@ public class MainActivity extends AppCompatActivity {
             Zone zone = new Zone();
             zone.setUSDAcode("7a");
             zone.setZip("96002");
-            //garden.setZone(zone);
-           // String string_zone = garden.getZone().getUSDAcode();
-          //  displayZone.setText(" Your hardiness zone is: " + string_zone);
-        } else if (garden == null) {
+            garden.setZone(zone);
+            String string_zone = garden.getZone().getUSDAcode();
+            displayZone.setText(" Your hardiness zone is: " + string_zone);
+        } else if (garden == null) { //The garden was already saved to shared preferences.
+            //Load the garden from shared preferences.
             garden = new Garden();
             garden.loadGarden();
         }
@@ -68,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                garden.setZone(newZone);
            }
         }
-
         garden.computeTasksPending();
     }
     public void launchZoneLookup(View v) {
