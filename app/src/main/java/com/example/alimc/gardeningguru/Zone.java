@@ -15,7 +15,7 @@ public class Zone {
     /**
      * Default constructor sets all parameters to an empty string.
      */
-    public Zone() {super(); /*zip = ""; USDAcode = ""; tempRange = "";*/ }
+    public Zone() {super(); zip = ""; USDAcode = ""; tempRange = ""; }
 
     /**
      * Constructor that takes a zip code.
