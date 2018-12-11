@@ -93,27 +93,17 @@ public class EditTask extends AppCompatActivity {
 
     public Date stringToDate(String dateString){
 
-       // SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         String[] dateArray = dateString.split("/");
         Date returnDate = new Date(Integer.parseInt(dateArray[2]),
-                                   Integer.parseInt(dateArray[1]),
+                                   Integer.parseInt(dateArray[1]) - 1,
                                    Integer.parseInt(dateArray[0]));
-
-
-      /*  try {
-            returnDate = dateFormat.parse(dateString);
-
-        } catch (ParseException e) {
-
-            e.printStackTrace();
-        }*/
 
         return returnDate;
     }
 
     public String dateToString(Date dateString){
 
-        String month = Integer.toString(dateString.getMonth());
+        String month = Integer.toString(dateString.getMonth() + 1);
         String day = Integer.toString(dateString.getDate());
         String year = Integer.toString(dateString.getYear());
 

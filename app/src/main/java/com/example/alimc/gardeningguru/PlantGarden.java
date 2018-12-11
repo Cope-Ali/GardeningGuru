@@ -26,7 +26,6 @@ import static com.example.alimc.gardeningguru.MainActivity.garden;
 public class PlantGarden extends AppCompatActivity {
     Garden garden = MainActivity.garden;
     private Planting newPlanting;
-    private PlantAdapter plantAdapter;
     private Spinner plant;
     private PlantingAdapter adapter;
     private List<Planting> plantingArrayList;
@@ -51,8 +50,8 @@ public class PlantGarden extends AppCompatActivity {
         this.plantingName = (TextView) findViewById(R.id.plantingName);
         this.plantingNotes = (EditText) findViewById(R.id.plantingNotes);
         this.plantingList = (ListView) findViewById(R.id.plantingList);
-        //this.saveEditBtn = (Button) findViewById(R.id.savePlant);
-        //this.resetDeleteBtn = (Button) findViewById(R.id.resetPlant);
+        this.saveEditBtn = (Button) findViewById(R.id.plantingSaveUpdate);
+        this.resetDeleteBtn = (Button) findViewById(R.id.plantingResetDeleteBtn);
         this.plantingArrayLocation = (TextView) findViewById(R.id.plantingArrayListPosition);
         this.plant = findViewById(R.id.plantDropdown);
         this.setListView();
@@ -114,6 +113,8 @@ public class PlantGarden extends AppCompatActivity {
     }
 
     private void clearInputFields() {
+        this.plantingName.setText("");
+        this.plantingNotes.setText("");
     }
 
     private void inputToPlanting(Planting newPlanting) {
@@ -129,7 +130,7 @@ public class PlantGarden extends AppCompatActivity {
         this.plantingName.setText(planting.getName());
         //this.plant.setPlant(planting.getPlant().toString());
         this.plantingNotes.setText(planting.getNotes());
-        this.plDate.setText(planting.getPlantWhen().toString());
+        //this.plDate.setText(planting.getPlantWhen().toString());
     }
 
     private void onPlantingItemClick(int position) {
