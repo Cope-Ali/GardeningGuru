@@ -52,20 +52,21 @@ public class PlantGarden extends AppCompatActivity {
         this.plantingArrayLocation = (TextView) findViewById(R.id.plantingArrayListPosition);
         this.spinner = findViewById(R.id.plantDropdown);
         this.setListView();
-       // String[] items = getPlantNames();
-      //  ArrayAdapter<String> plantAdapter = new ArrayAdapter<String>(this, simple_spinner_item, items);
-     //   plantAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-      //  spinner.setAdapter(plantAdapter);
+        List<String> items = getPlantNames();
 
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, items);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
 
     }
 
-    private String[] getPlantNames(){
+    private List<String> getPlantNames(){
         //cycle through all plants in garden.
-        String[] plantNames = new String[garden.getPlants().size()];
+        List<String> plantNames = new ArrayList<String>();
         int i = 0;
         for (Map.Entry<String, Plant> plant : garden.getPlants().entrySet()) {
-            plantNames[i] = plant.getKey();
+            plantNames.add(plant.getKey());
         }
         return plantNames;
     }
