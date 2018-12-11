@@ -26,12 +26,15 @@ public class PlantGarden extends AppCompatActivity {
     private List<Planting> plantingArrayList;
     private ListView plantingList;
     private EditText plDate;
+    private EditText plLocation;
     private TextView plantingName;
     private EditText plantingNotes;
     private Button saveEditBtn;
     private Button resetDeleteBtn;
     private TextView plantingArrayLocation;
     private Spinner spinner;
+    private String selectedPlantName;
+    private String createdPlantingName;
     public String[] plantNames;
     private Plant plant;
 
@@ -39,12 +42,13 @@ public class PlantGarden extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //load garden objects
+        garden.loadGarden();
+
         setContentView(R.layout.activity_plant_garden);
-
-
-
         this.plDate = (EditText) findViewById(R.id.plantingDate);
         this.plantingName = (TextView) findViewById(R.id.plantingName);
+        this.plLocation = (EditText) findViewById(R.id.plantingLocation);
         this.plantingNotes = (EditText) findViewById(R.id.plantingNotes);
         this.plantingList = (ListView) findViewById(R.id.plantingList);
         this.saveEditBtn = (Button) findViewById(R.id.plantingSaveUpdate);
@@ -59,7 +63,32 @@ public class PlantGarden extends AppCompatActivity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedPlantName = (String) parent.getItemAtPosition(position);
+                createdPlantingName = selectedPlantName;
+                if(plDate !=null)
+                    createdPlantingName += plDate;
+                if(plLocation !=null)
+                    createdPlantingName += plLocation;
+                setPlantingName();
+            }
+
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
+
+    private void setPlantingName() {
+        this.plantingName.setText(createdPlantingName);
+    }
+
 
     private List<String> getPlantNames(){
         //cycle through all plants in garden.
@@ -70,8 +99,10 @@ public class PlantGarden extends AppCompatActivity {
         }
         return plantNames;
     }
+    
 
-    private void setListView() {
+
+        private void setListView() {
         Collection<Planting> values;
 
         if(garden.getPlantings() != null){
@@ -112,6 +143,7 @@ public class PlantGarden extends AppCompatActivity {
             this.adapter.notifyDataSetChanged();
             this.setButtonText("add");
         }
+        garden.saveGarden();
     }
 
     private void setButtonText(String action) {
@@ -127,6 +159,7 @@ public class PlantGarden extends AppCompatActivity {
 
     private void clearInputFields() {
         this.plantingName.setText("");
+        this.plLocation.setText("");
         this.plantingNotes.setText("");
         this.plDate.setText("");
     }
@@ -143,6 +176,7 @@ public class PlantGarden extends AppCompatActivity {
     public void plantingToInput(Planting planting){
         this.plantingName.setText(planting.getName());
         //this.plant.setPlant(planting.getPlant().toString());
+        this.plLocation.setText(planting.getLocation());
         this.plantingNotes.setText(planting.getNotes());
         this.plDate.setText(planting.getPlantWhen().toString());
     }
