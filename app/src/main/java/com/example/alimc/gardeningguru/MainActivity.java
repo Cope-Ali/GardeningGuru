@@ -54,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
             zone.setZip("96002");
             garden.setZone(zone);
             String string_zone = garden.getZone().getUSDAcode();
+            //this is to test the task
+            Task task1 = new Task("test1","plant1",new Date(2020,12,28),false,"test",0);
+            Task task2 = new Task("test2","plant2",new Date(2020,1,28),false,"test",0);
+            Task task3 = new Task("test3","plant3",new Date(2020,8,28),false,"test",0);
+            garden.addTask(task1);
+            garden.addTask(task2);
+            garden.addTask(task3);
         } else if (garden == null) { //The garden was already saved to shared preferences.
             //Load the garden from shared preferences.
             garden = new Garden();
@@ -91,14 +98,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void taskViewOnClick(View view){
-
-        //this is to test the task
-        Task task1 = new Task("test1","plant1",new Date(2020,12,28),false,"test",0);
-        Task task2 = new Task("test2","plant2",new Date(2020,1,28),false,"test",0);
-        Task task3 = new Task("test3","plant3",new Date(2020,8,28),false,"test",0);
-        garden.addTask(task1);
-        garden.addTask(task2);
-        garden.addTask(task3);
 
         Intent intent = new Intent(this, TaskList.class);
         startActivity(intent);

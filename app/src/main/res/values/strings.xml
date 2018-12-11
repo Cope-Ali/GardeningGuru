@@ -33,10 +33,10 @@
     <string name="delete_plant">Delete</string>
     <string name="update_plant">Update</string>
     <string name="notes_on_task">Notes on task</string>
-    <string name="update_planting" />
-    <string name="delete_planting" />
-    <string name="reset_planting" />
-    <string name="add_planting" />
+    <string name="update_planting" >Update</string>
+    <string name="delete_planting" >Delete</string>
+    <string name="reset_planting" >Reset</string>
+    <string name="add_planting" >Save</string>
     <string name="title_activity_task_list">TaskList</string>
     <string name="tasklistLbl">Task View</string>
     <string name="taskList_plantingTxtv">Planting</string>

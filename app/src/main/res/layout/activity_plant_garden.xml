@@ -37,10 +37,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/plantingSaveUpdate" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/plantingSaveUpdate"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -51,14 +51,15 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/save"
+        android:onClick="onClickPlantSaveBtn"
+        android:text="@string/add_planting"
         app:layout_constraintBottom_toTopOf="@+id/plantingList"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/plantingResetDeleteBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantingNotes" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/plantingResetDeleteBtn"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -69,10 +70,11 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/reset_changes"
+        android:onClick="onClickPlantingResetBtn"
+        android:text="@string/reset_planting"
         app:layout_constraintBottom_toTopOf="@+id/plantingList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/plantingSaveUpdate"
         app:layout_constraintTop_toBottomOf="@+id/plantingNotes" />
 
     <EditText
@@ -89,7 +91,7 @@
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:text="@string/notes"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/plantingSaveUpdate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,5 +128,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantingName" />
+
+    <TextView
+        android:id="@+id/plantingArrayListPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="gone"/>
 
 </android.support.constraint.ConstraintLayout>
