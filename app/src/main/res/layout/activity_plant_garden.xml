@@ -19,15 +19,16 @@
         android:ems="10"
         android:hint="@string/planting_date"
         android:inputType="date"
-        app:layout_constraintBottom_toTopOf="@+id/plantingNotes"
+        app:layout_constraintBottom_toTopOf="@+id/plantingLocation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantDropdown" />
 
     <ListView
         android:id="@+id/plantingList"
         android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_height="97dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -36,6 +37,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plantingSaveUpdate" />
 
@@ -80,7 +82,7 @@
     <EditText
         android:id="@+id/plantingNotes"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -93,9 +95,9 @@
         android:text="@string/notes"
         app:layout_constraintBottom_toTopOf="@+id/plantingSaveUpdate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plantingDate" />
+        app:layout_constraintTop_toBottomOf="@+id/plantingLocation" />
 
     <TextView
         android:id="@+id/plantingName"
@@ -103,7 +105,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
@@ -112,7 +114,8 @@
         app:layout_constraintBottom_toTopOf="@+id/plantDropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Spinner
         android:id="@+id/plantDropdown"
@@ -133,7 +136,23 @@
         android:id="@+id/plantingArrayListPosition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textview"
         android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/plantingLocation"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/planting_location"
+        app:layout_constraintBottom_toTopOf="@+id/plantingNotes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plantingDate" />
 
 </android.support.constraint.ConstraintLayout>

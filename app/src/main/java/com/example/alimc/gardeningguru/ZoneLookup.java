@@ -76,9 +76,6 @@ public class ZoneLookup extends AppCompatActivity {
                 garden.setZone(zone);
                 garden.saveGarden();
 
-                //show garden
-                Toast toast=Toast.makeText(getApplicationContext(),garden.getZone().getUSDAcode(),Toast.LENGTH_SHORT);
-                toast.show();
 
 
             }

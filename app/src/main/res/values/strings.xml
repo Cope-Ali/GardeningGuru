@@ -49,5 +49,5 @@
     <string name="taskeditPlanting">Planting</string>
     <string name="name">Name</string>
     <string name="planting_name">Planting Name</string>
-    <string name="textview">TextView</string>
+    <string name="planting_location">Planting Location</string>
 </resources>
