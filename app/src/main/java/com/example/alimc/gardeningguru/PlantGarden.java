@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import static android.R.layout.simple_spinner_item;
 
@@ -60,13 +61,14 @@ public class PlantGarden extends AppCompatActivity {
     }
 
     private String[] getPlantNames(){
-            //cycle through all plants in garden.
-            for( int i = 0; i < garden.getPlants().size(); i++) {
-                // how to get next plant?
-                plantNames[i] = garden.getPlants().get(plant).getName();
-            }
-            return plantNames;
+        //cycle through all plants in garden.
+        String[] plantNames = new String[garden.getPlants().size()];
+        int i = 0;
+        for (Map.Entry<String, Plant> plant : garden.getPlants().entrySet()) {
+            plantNames[i] = plant.getKey();
         }
+        return plantNames;
+    }
 
     private void setListView() {
         Collection<Planting> values;
