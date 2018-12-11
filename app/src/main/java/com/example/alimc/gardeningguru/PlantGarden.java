@@ -1,32 +1,26 @@
 package com.example.alimc.gardeningguru;
 
-import android.app.Notification;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.text.Layout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static com.example.alimc.gardeningguru.MainActivity.garden;
+import static android.R.layout.simple_spinner_item;
 
 public class PlantGarden extends AppCompatActivity {
     Garden garden = MainActivity.garden;
     private Planting newPlanting;
-    private Spinner plant;
     private PlantingAdapter adapter;
     private List<Planting> plantingArrayList;
     private ListView plantingList;
@@ -36,6 +30,9 @@ public class PlantGarden extends AppCompatActivity {
     private Button saveEditBtn;
     private Button resetDeleteBtn;
     private TextView plantingArrayLocation;
+    private Spinner spinner;
+    public String[] plantNames;
+    private Plant plant;
 
 
     @Override
@@ -43,20 +40,33 @@ public class PlantGarden extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plant_garden);
 
-       // plantAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //plant.setAdapter(plantAdapter);
+
 
         this.plDate = (EditText) findViewById(R.id.plantingDate);
         this.plantingName = (TextView) findViewById(R.id.plantingName);
         this.plantingNotes = (EditText) findViewById(R.id.plantingNotes);
         this.plantingList = (ListView) findViewById(R.id.plantingList);
-        this.saveEditBtn = (Button) findViewById(R.id.plantingSaveUpdate);
-        this.resetDeleteBtn = (Button) findViewById(R.id.plantingResetDeleteBtn);
+        //this.saveEditBtn = (Button) findViewById(R.id.savePlant);
+        //this.resetDeleteBtn = (Button) findViewById(R.id.resetPlant);
         this.plantingArrayLocation = (TextView) findViewById(R.id.plantingArrayListPosition);
-        this.plant = findViewById(R.id.plantDropdown);
+        this.spinner = findViewById(R.id.plantDropdown);
         this.setListView();
+        String[] items = getPlantNames();
+        ArrayAdapter<String> plantAdapter = new ArrayAdapter<String>(this, simple_spinner_item, items);
+        plantAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(plantAdapter);
+
 
     }
+
+    private String[] getPlantNames(){
+            //cycle through all plants in garden.
+            for( int i = 0; i < garden.getPlants().size(); i++) {
+                // how to get next plant?
+                plantNames[i] = garden.getPlants().get(plant).getName();
+            }
+            return plantNames;
+        }
 
     private void setListView() {
         Collection<Planting> values;
@@ -113,8 +123,6 @@ public class PlantGarden extends AppCompatActivity {
     }
 
     private void clearInputFields() {
-        this.plantingName.setText("");
-        this.plantingNotes.setText("");
     }
 
     private void inputToPlanting(Planting newPlanting) {
@@ -130,7 +138,7 @@ public class PlantGarden extends AppCompatActivity {
         this.plantingName.setText(planting.getName());
         //this.plant.setPlant(planting.getPlant().toString());
         this.plantingNotes.setText(planting.getNotes());
-        //this.plDate.setText(planting.getPlantWhen().toString());
+        this.plDate.setText(planting.getPlantWhen().toString());
     }
 
     private void onPlantingItemClick(int position) {

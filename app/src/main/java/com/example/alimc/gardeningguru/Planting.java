@@ -2,10 +2,13 @@ package com.example.alimc.gardeningguru;
 
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.example.alimc.gardeningguru.MainActivity.garden;
 
 /**
  * Everything you want to know about a planting. A planting is an instance of a plant or plants being planted.
@@ -23,6 +26,7 @@ public class Planting {
     private String location;
     private Map<String, Task> tasks;
     public static final int DEFAULT_WEEDING_INTERVAL = 7; //STRETCH todo look up weeding schedule by USDA zone and/or maybe seasonally
+
 
     /**
      * Default constructor for Planting.
@@ -71,6 +75,7 @@ public class Planting {
         }
         return weedingDate;
     }
+
 
     /**
      *  computeTasks
