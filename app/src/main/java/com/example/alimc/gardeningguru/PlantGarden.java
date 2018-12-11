@@ -68,10 +68,10 @@ public class PlantGarden extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedPlantName = (String) parent.getItemAtPosition(position);
                 createdPlantingName = selectedPlantName;
-                if(plDate !=null)
-                    createdPlantingName += plDate;
+                //if(plDate !=null)
+                  // createdPlantingName += plDate.getText();
                 if(plLocation !=null)
-                    createdPlantingName += plLocation;
+                    createdPlantingName += plLocation.getText();
                 setPlantingName();
             }
 
@@ -130,7 +130,7 @@ public class PlantGarden extends AppCompatActivity {
 
         String buttonText = this.saveEditBtn.getText().toString();
 
-        if(buttonText.equals(getResources().getString(R.string.add_plant))) {
+        if(buttonText.equals(getResources().getString(R.string.add_planting))) {
             this.newPlanting = new Planting();
             this.inputToPlanting(this.newPlanting);
             garden.addPlanting(this.newPlanting);
