@@ -50,4 +50,5 @@
     <string name="name">Name</string>
     <string name="planting_name">Planting Name</string>
     <string name="planting_location">Planting Location</string>
+    <string name="arraylistposition">arrayListPosition</string>
 </resources>
