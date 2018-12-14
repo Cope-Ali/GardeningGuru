@@ -9,6 +9,10 @@ import java.util.List;
 
 import static com.example.alimc.gardeningguru.MainActivity.garden;
 
+/**
+ * TaskList creates a way to view the list of tasks utilising the taskAdapter
+ */
+
 public class TaskList extends AppCompatActivity {
     private TaskAdapter adapter;
     private List<Task> taskList;

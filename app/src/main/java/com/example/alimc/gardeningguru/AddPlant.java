@@ -16,6 +16,12 @@ import java.util.List;
 
 import static com.example.alimc.gardeningguru.MainActivity.garden;
 
+/**
+ * AddPlant activity loads and displays any existing plants, allows the
+ * user to create new plants and edit existing plants. Loads and saves from
+ * garden object
+ */
+
 public class AddPlant extends AppCompatActivity {
 
     private Plant newPlant;

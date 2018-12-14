@@ -15,6 +15,11 @@ import java.util.List;
 
 import static com.example.alimc.gardeningguru.MainActivity.garden;
 
+/**
+ * EditTask activity creates new Tasks, displays existing tasks and allows user
+ * to edit existing tasks
+ */
+
 public class EditTask extends AppCompatActivity {
 
     private EditText plantingEtxt;

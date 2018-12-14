@@ -23,7 +23,7 @@ import static android.R.layout.simple_spinner_item;
  * PlantGarden activity creates a new Planting object from the user's input
  * <p>
  *     The user selects a plant object and adds information about location and date
- *     of planting. User can load and edit exsiting planting objects or create
+ *     of planting. User can load and edit existing planting objects or create
  *     new planting objects
  * </p>
  */

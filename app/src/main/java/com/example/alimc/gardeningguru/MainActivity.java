@@ -18,6 +18,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * GardeningGuru MainActivity displays hardiness zone, launches activity to lookup
+ * set zone using a zip code, displays tasks and launches activity to create plants,
+ * plant the garden (create plantings) add or edit tasks.
+ */
 
 public class MainActivity extends AppCompatActivity {
 

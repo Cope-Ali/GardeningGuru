@@ -9,6 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * TaskAdapterMainAct extends the ArrayAdapter to display an array of task objects
+ * this is designed for display in the main activity
+ */
+
 public class TaskAdapterMainAct extends ArrayAdapter<Task> {
 
     private List<Task> taskArrayList;
