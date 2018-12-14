@@ -10,7 +10,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * PlantAdapter creates an ArrayAdapter type to display the different Plant objects
+ *
+ */
+
 public class PlantAdapter extends ArrayAdapter<Plant> {
+
+    /**
+     * PlantAdapter
+     * @param context the context we are working in
+     * @param plants a list of plant objects from the Garden
+     */
 
     public PlantAdapter(Context context, List<Plant> plants){
         super(context, 0, plants);

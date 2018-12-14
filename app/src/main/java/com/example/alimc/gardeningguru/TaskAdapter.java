@@ -13,10 +13,20 @@ import java.util.List;
 
 import static com.example.alimc.gardeningguru.MainActivity.garden;
 
+/**
+ * TaskAdapter
+ * Formats an ArrayAdapter to display the array of Task Objects
+ */
 
 public class TaskAdapter extends ArrayAdapter<Task> {
 
     private List<Task> taskArrayList;
+
+    /**
+     * TaskAdapter
+     * @param context the context we are working in
+     * @param tasks list of task objects from the Garden
+     */
 
     public TaskAdapter(Context context, List<Task> tasks){
 

@@ -17,7 +17,14 @@ import org.json.JSONObject;
 import static com.example.alimc.gardeningguru.MainActivity.garden;
 
 /**
+ *ZoneLookup uses a user inputted zip code to get the USDA Hardiness Zone.
+ * <p>
+ *    Activity finds the zip code inputted by the user and passes it and
+ *    the API web address into lookupZip method. It then enters all of the
+ *    returned information into its place in the Zone object and saves the
+ *    Zone to the Garden.
  *
+ * </p>
  */
 public class ZoneLookup extends AppCompatActivity {
     private TextView ZoneView;
