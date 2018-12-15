@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -47,6 +48,7 @@ public class PlantGarden extends AppCompatActivity {
     private String createdPlantingName;
     public String[] plantNames;
     private Plant plant;
+    private  ArrayAdapter dataAdapater;
 
 
     @Override
@@ -68,10 +70,10 @@ public class PlantGarden extends AppCompatActivity {
         this.setListView();
         List<String> items = getPlantNames();
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+        this.dataAdapater = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, items);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
+        this.dataAdapater.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(this.dataAdapater);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -175,20 +177,24 @@ public class PlantGarden extends AppCompatActivity {
     }
 
     private void inputToPlanting(Planting newPlanting) {
-        newPlanting.setName(this.plantingName.getText().toString());
+
         //TODO fix plant as string into plant as object
-       // newPlanting.setPlant(this.plant.getText().toString());
+         newPlanting.setPlant(garden.getPlant(this.spinner.getSelectedItem().toString()));
         //TODO figure out how to set date
-       // newPlanting.setPlantWhen(this.plDate.getText().toDate());
+        newPlanting.setPlantWhen(stringToDate(this.plDate.getText().toString()));
         newPlanting.setNotes(this.plantingNotes.getText().toString());
+        newPlanting.setName(this.plantingName.getText().toString() != "" ?
+                            newPlanting.getPlant().getName() + dateToString(newPlanting.getPlantWhen())
+                            : this.plantingName.getText().toString() );
     }
 
     public void plantingToInput(Planting planting){
         this.plantingName.setText(planting.getName());
-        //this.plant.setPlant(planting.getPlant().toString());
+        //set spinner
+        this.spinner.setSelection(this.dataAdapater.getPosition(planting.getPlant().getName()));
         this.plLocation.setText(planting.getLocation());
         this.plantingNotes.setText(planting.getNotes());
-        this.plDate.setText(planting.getPlantWhen().toString());
+        this.plDate.setText(dateToString(planting.getPlantWhen()));
     }
 
     private void onPlantingItemClick(int position) {
@@ -217,5 +223,24 @@ public class PlantGarden extends AppCompatActivity {
         this.plantingNotes.setText("");
         this.plDate.setText("");
         //this.plant.setText("");
+    }
+
+    public Date stringToDate(String dateString){
+
+        String[] dateArray = dateString.split("/");
+        Date returnDate = new Date(Integer.parseInt(dateArray[2]),
+                Integer.parseInt(dateArray[1]) - 1,
+                Integer.parseInt(dateArray[0]));
+
+        return returnDate;
+    }
+
+    public String dateToString(Date dateString){
+
+        String month = Integer.toString(dateString.getMonth() + 1);
+        String day = Integer.toString(dateString.getDate());
+        String year = Integer.toString(dateString.getYear());
+
+        return month + "/" + day + "/" + year;
     }
 }

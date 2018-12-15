@@ -51,4 +51,6 @@
     <string name="planting_name">Planting Name</string>
     <string name="planting_location">Planting Location</string>
     <string name="arraylistposition">arrayListPosition</string>
+    <string name="channel_name">GardenGru</string>
+    <string name="channel_description">Notification for planting gardens</string>
 </resources>

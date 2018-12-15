@@ -120,7 +120,9 @@ public class Garden {
         return this.plants;
     }
 
-    public Plant getPlant(String key){ return this.plants.get(key); }
+    public Plant getPlant(String key){
+        return this.plants.get(key);
+    }
 
     public void setPlants(Map<String, Plant> plants) { this.plants = plants; }
 
